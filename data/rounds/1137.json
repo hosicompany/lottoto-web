@@ -43,7 +43,1260 @@
   }
  ],
  "totalSales": 119250007000,
- "winners1": [],
- "winners2": [],
- "fetchedAt": "2026-10-06T13:40:56+0900"
+ "winners1": [
+  {
+   "id": "11110101",
+   "name": "옥수역복권방",
+   "address": "서울 성동구 한림말길 49",
+   "region": "서울",
+   "purchaseType": "수동",
+   "phone": "02-2298-5000",
+   "lat": 37.541433,
+   "lng": 127.01658
+  },
+  {
+   "id": "12640347",
+   "name": "대왕로또",
+   "address": "부산 영도구 남항로 35",
+   "region": "부산",
+   "purchaseType": "자동",
+   "phone": null,
+   "lat": 35.088928,
+   "lng": 129.04029
+  },
+  {
+   "id": "12610172",
+   "name": "훼미리마트영도모닝점",
+   "address": "부산 영도구 태종로100번길 3",
+   "region": "부산",
+   "purchaseType": "자동",
+   "phone": "051-415-5229",
+   "lat": 35.091185,
+   "lng": 129.041819
+  },
+  {
+   "id": "12840007",
+   "name": "노다지천국",
+   "address": "인천 미추홀구 인주대로 185 1층1호",
+   "region": "인천",
+   "purchaseType": "자동",
+   "phone": null,
+   "lat": 37.455547,
+   "lng": 126.65762
+  },
+  {
+   "id": "12820007",
+   "name": "소래복권",
+   "address": "인천 남동구 앵고개로934번길 5",
+   "region": "인천",
+   "purchaseType": "수동",
+   "phone": null,
+   "lat": 37.401847,
+   "lng": 126.73514
+  },
+  {
+   "id": "14110041",
+   "name": "퍼스트",
+   "address": "경기 성남시 수정구 산성대로 523 1층",
+   "region": "경기",
+   "purchaseType": "반자동",
+   "phone": "031-717-3915",
+   "lat": 37.4579,
+   "lng": 127.16369
+  },
+  {
+   "id": "14110205",
+   "name": "패밀리복권방",
+   "address": "경기 남양주시 늘을1로16번길 29 늘봄타워 107호",
+   "region": "경기",
+   "purchaseType": "자동",
+   "phone": null,
+   "lat": 37.654082,
+   "lng": 127.24333
+  },
+  {
+   "id": "14190015",
+   "name": "대박",
+   "address": "경기 구리시 안골로103번길 46 1층",
+   "region": "경기",
+   "purchaseType": "자동",
+   "phone": "031-557-5647",
+   "lat": 37.599435,
+   "lng": 127.14156
+  },
+  {
+   "id": "14141049",
+   "name": "굿샷",
+   "address": "경기 고양시 일산동구 위시티로 49 104호",
+   "region": "경기",
+   "purchaseType": "자동",
+   "phone": null,
+   "lat": 37.67671,
+   "lng": 126.80984
+  },
+  {
+   "id": "14240201",
+   "name": "성원복권방",
+   "address": "강원 인제군 원통로 169 1층",
+   "region": "강원",
+   "purchaseType": "자동",
+   "phone": "033-461-2005",
+   "lat": 38.12235,
+   "lng": 128.20317
+  },
+  {
+   "id": "14310094",
+   "name": "로또명당금왕점",
+   "address": "충북 음성군 탑골길 55 세븐일레븐 금왕점",
+   "region": "충북",
+   "purchaseType": "수동",
+   "phone": "043-881-9010",
+   "lat": 36.990975,
+   "lng": 127.58637
+  },
+  {
+   "id": "14400033",
+   "name": "대산슈퍼",
+   "address": "충남 천안시 동남구 복구정3길 1",
+   "region": "충남",
+   "purchaseType": "수동",
+   "phone": "041-557-3624",
+   "lat": 36.770047,
+   "lng": 127.25019
+  },
+  {
+   "id": "14410112",
+   "name": "로또명당해미점",
+   "address": "충남 서산시 남문2로 108",
+   "region": "충남",
+   "purchaseType": "자동",
+   "phone": "041-688-6004",
+   "lat": 36.71344,
+   "lng": 126.544188
+  },
+  {
+   "id": "14700032",
+   "name": "복권명당",
+   "address": "경북 경산시 경안로 214",
+   "region": "경북",
+   "purchaseType": "자동",
+   "phone": "053-815-1186",
+   "lat": 35.826538,
+   "lng": 128.73688
+  }
+ ],
+ "winners2": [
+  {
+   "id": "11190239",
+   "name": "갤러리마트",
+   "address": "서울 중랑구 사가정로 387",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-492-8251",
+   "lat": 37.580926,
+   "lng": 127.08773
+  },
+  {
+   "id": "11100561",
+   "name": "대박드림복권",
+   "address": "서울 중랑구 망우로 203 동양엔파트131호",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "070-4145-2553",
+   "lat": 37.594009,
+   "lng": 127.07494
+  },
+  {
+   "id": "11101518",
+   "name": "리더스",
+   "address": "서울 중랑구 봉화산로 194 신아타운105",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-3423-2288",
+   "lat": 37.606437,
+   "lng": 127.09469
+  },
+  {
+   "id": "11100048",
+   "name": "행운마트",
+   "address": "서울 중구 마른내로 54-1 1층",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2274-4251",
+   "lat": 37.564217,
+   "lng": 126.99385
+  },
+  {
+   "id": "11100959",
+   "name": "로또킹",
+   "address": "서울 영등포구 영중로 2 1층(영등포동3가)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2633-2200",
+   "lat": 37.516741,
+   "lng": 126.90673
+  },
+  {
+   "id": "11100959",
+   "name": "로또킹",
+   "address": "서울 영등포구 영중로 2 1층(영등포동3가)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2633-2200",
+   "lat": 37.516741,
+   "lng": 126.90673
+  },
+  {
+   "id": "11100968",
+   "name": "당산로또명당점",
+   "address": "서울 영등포구 양평로 52",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2634-0995",
+   "lat": 37.534656,
+   "lng": 126.90087
+  },
+  {
+   "id": "11100959",
+   "name": "로또킹",
+   "address": "서울 영등포구 영중로 2 1층(영등포동3가)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2633-2200",
+   "lat": 37.516741,
+   "lng": 126.90673
+  },
+  {
+   "id": "11100959",
+   "name": "로또킹",
+   "address": "서울 영등포구 영중로 2 1층(영등포동3가)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2633-2200",
+   "lat": 37.516741,
+   "lng": 126.90673
+  },
+  {
+   "id": "11100959",
+   "name": "로또킹",
+   "address": "서울 영등포구 영중로 2 1층(영등포동3가)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2633-2200",
+   "lat": 37.516741,
+   "lng": 126.90673
+  },
+  {
+   "id": "11190203",
+   "name": "농가마트",
+   "address": "서울 양천구 중앙로 264 1층",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2646-5470",
+   "lat": 37.519976,
+   "lng": 126.85328
+  },
+  {
+   "id": "51100000",
+   "name": "인터넷 복권판매사이트",
+   "address": "동행복권(dhlottery.co.kr)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-1588-6450",
+   "lat": 37.482063,
+   "lng": 127.015788
+  },
+  {
+   "id": "51100000",
+   "name": "인터넷 복권판매사이트",
+   "address": "동행복권(dhlottery.co.kr)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-1588-6450",
+   "lat": 37.482063,
+   "lng": 127.015788
+  },
+  {
+   "id": "51100000",
+   "name": "인터넷 복권판매사이트",
+   "address": "동행복권(dhlottery.co.kr)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-1588-6450",
+   "lat": 37.482063,
+   "lng": 127.015788
+  },
+  {
+   "id": "51100000",
+   "name": "인터넷 복권판매사이트",
+   "address": "동행복권(dhlottery.co.kr)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-1588-6450",
+   "lat": 37.482063,
+   "lng": 127.015788
+  },
+  {
+   "id": "11190131",
+   "name": "가판 창동역점",
+   "address": "서울 도봉구 마들로11길 73 창동역문화마당앞",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-997-0525",
+   "lat": 37.653336,
+   "lng": 127.048893
+  },
+  {
+   "id": "11110255",
+   "name": "로또판매점",
+   "address": "서울 노원구 상계로 309-1 cu",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.670866,
+   "lng": 127.07999
+  },
+  {
+   "id": "11101365",
+   "name": "미래복권",
+   "address": "서울 노원구 동일로191길 7 1층",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-978-2011",
+   "lat": 37.62519,
+   "lng": 127.07262
+  },
+  {
+   "id": "11100022",
+   "name": "다모아",
+   "address": "서울 구로구 공원로6나길 39-1",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-830-3330",
+   "lat": 37.504472,
+   "lng": 126.89179
+  },
+  {
+   "id": "11140477",
+   "name": "소문난복권방",
+   "address": "서울 구로구 서해안로 2124 1층 101호(항동, 가온주차타워)",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.481654,
+   "lng": 126.82537
+  },
+  {
+   "id": "11100495",
+   "name": "또와식품",
+   "address": "서울 강서구 양천로 694",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-3665-4377",
+   "lat": 37.550114,
+   "lng": 126.87285
+  },
+  {
+   "id": "11120005",
+   "name": "대림슈퍼복권방",
+   "address": "서울 강서구 가로공원로76길 47",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.534985,
+   "lng": 126.83789
+  },
+  {
+   "id": "11140162",
+   "name": "플러스복권",
+   "address": "서울 강서구 공항대로41길 34 1층 113B호",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.559282,
+   "lng": 126.84571
+  },
+  {
+   "id": "11140147",
+   "name": "로또은행복권방",
+   "address": "서울 강북구 도봉로 264 1층 101호",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.632043,
+   "lng": 127.02413
+  },
+  {
+   "id": "11130048",
+   "name": "대박슈퍼",
+   "address": "서울 강동구 올림픽로 800 1층 106호",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.55231,
+   "lng": 127.12858
+  },
+  {
+   "id": "12640361",
+   "name": "팡팡로또",
+   "address": "부산 해운대구 재반로 176",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.193059,
+   "lng": 129.12977
+  },
+  {
+   "id": "12630012",
+   "name": "황금코끼리로또점",
+   "address": "부산 북구 금곡대로 318",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.236707,
+   "lng": 129.01416
+  },
+  {
+   "id": "12640283",
+   "name": "복권판매 삼거리점",
+   "address": "부산 부산진구 새싹로8번길 11 1층",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.159151,
+   "lng": 129.05892
+  },
+  {
+   "id": "12640416",
+   "name": "천하제일명당",
+   "address": "부산 부산진구 골드테마길 42",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.143559,
+   "lng": 129.06013
+  },
+  {
+   "id": "12600253",
+   "name": "로또온천장점",
+   "address": "부산 동래구 중앙대로 1520 북쪽출구 빵집",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": "051-513-9147",
+   "lat": 35.220275,
+   "lng": 129.08639
+  },
+  {
+   "id": "12700148",
+   "name": "짱25시",
+   "address": "대구 수성구 달구벌대로 2610 세븐일레븐남부점내(좌측2번째상가)",
+   "region": "대구",
+   "purchaseType": null,
+   "phone": "053-741-7949",
+   "lat": 35.857865,
+   "lng": 128.64766
+  },
+  {
+   "id": "12790032",
+   "name": "돈벼락복권방",
+   "address": "대구 북구 동변로 82-1 1층",
+   "region": "대구",
+   "purchaseType": null,
+   "phone": "053-943-6453",
+   "lat": 35.920703,
+   "lng": 128.60379
+  },
+  {
+   "id": "12790069",
+   "name": "대림서점",
+   "address": "대구 남구 중앙대로 158 대림서점",
+   "region": "대구",
+   "purchaseType": null,
+   "phone": "053-472-0508",
+   "lat": 35.847383,
+   "lng": 128.59079
+  },
+  {
+   "id": "12740025",
+   "name": "빨래터 복권방",
+   "address": "대구 남구 대명남로 64 1층,대명동",
+   "region": "대구",
+   "purchaseType": null,
+   "phone": "05-300-0000",
+   "lat": 35.834738,
+   "lng": 128.56504
+  },
+  {
+   "id": "12810031",
+   "name": "김영로또",
+   "address": "인천 옹진군 영흥북로 3 105호",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": "032-886-0523",
+   "lat": 37.256472,
+   "lng": 126.49672
+  },
+  {
+   "id": "12840182",
+   "name": "행복복권",
+   "address": "인천 서해구 가정로394번길 2 104호",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.519844,
+   "lng": 126.6733
+  },
+  {
+   "id": "12840048",
+   "name": "당하복권명당",
+   "address": "인천 검단구 서곶로 788",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": "032-566-1471",
+   "lat": 37.58812,
+   "lng": 126.67535
+  },
+  {
+   "id": "12800052",
+   "name": "행운복권편의점",
+   "address": "인천 남동구 구월남로 286-2 1층",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": "032-469-2269",
+   "lat": 37.451992,
+   "lng": 126.72127
+  },
+  {
+   "id": "12820007",
+   "name": "소래복권",
+   "address": "인천 남동구 앵고개로934번길 5",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.401847,
+   "lng": 126.73514
+  },
+  {
+   "id": "12840096",
+   "name": "천운",
+   "address": "인천 계양구 도두리로 25 1층 106호 일부(루비프라자)",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.534152,
+   "lng": 126.73711
+  },
+  {
+   "id": "12940204",
+   "name": "염주행운로또",
+   "address": "전남광주 서구 월드컵4강로 27 더샵 염주센트럴파크 상가동 B107호(화정동)",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.139714,
+   "lng": 126.87613
+  },
+  {
+   "id": "12900151",
+   "name": "영화복권(버들점)",
+   "address": "전남광주 서구 상무버들로 32",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": "062-381-7145",
+   "lat": 35.164624,
+   "lng": 126.86001
+  },
+  {
+   "id": "12910046",
+   "name": "드림",
+   "address": "전남광주 서구 화개2로 14",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": "062-655-0390",
+   "lat": 35.123792,
+   "lng": 126.85832
+  },
+  {
+   "id": "12900094",
+   "name": "역전복권방",
+   "address": "전남광주 광산구 상무대로 208 1층",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": "062-941-9737",
+   "lat": 35.137773,
+   "lng": 126.79205
+  },
+  {
+   "id": "12910027",
+   "name": "차밍플라워 로또",
+   "address": "전남광주 광산구 풍영로 41 동구빌딩1층",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": "062-956-3366",
+   "lat": 35.175626,
+   "lng": 126.81157
+  },
+  {
+   "id": "13090043",
+   "name": "유성코아복권슈퍼",
+   "address": "대전 유성구 문화원로6번길 103 코아마트",
+   "region": "대전",
+   "purchaseType": null,
+   "phone": "042-823-2870",
+   "lat": 36.357477,
+   "lng": 127.33809
+  },
+  {
+   "id": "13000046",
+   "name": "복권방",
+   "address": "대전 동구 대전로 799",
+   "region": "대전",
+   "purchaseType": null,
+   "phone": "042-223-6100",
+   "lat": 36.330687,
+   "lng": 127.43249
+  },
+  {
+   "id": "13000026",
+   "name": "천하명당복권방역전점",
+   "address": "대전 동구 대전로 815",
+   "region": "대전",
+   "purchaseType": null,
+   "phone": "042-257-2006",
+   "lat": 36.332404,
+   "lng": 127.43188
+  },
+  {
+   "id": "14141946",
+   "name": "상신복권판매점&셀프카페",
+   "address": "경기 화성시 만세구 신광길 21 102호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.104243,
+   "lng": 126.90308
+  },
+  {
+   "id": "14100251",
+   "name": "행복충전소",
+   "address": "경기 평택시 탄현로 332-2",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-664-1210",
+   "lat": 37.081804,
+   "lng": 127.05641
+  },
+  {
+   "id": "14140903",
+   "name": "동행복권(황금돼지)",
+   "address": "경기 용인시 처인구 오포로 94",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.342643,
+   "lng": 127.17725
+  },
+  {
+   "id": "14141503",
+   "name": "세븐일레븐용인남사점",
+   "address": "경기 용인시 처인구 어진로 571",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.108214,
+   "lng": 127.17114
+  },
+  {
+   "id": "14110459",
+   "name": "민속촌삼거리 행운복권방",
+   "address": "경기 용인시 기흥구 용구대로 1869 1층",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.254974,
+   "lng": 127.10475
+  },
+  {
+   "id": "14140306",
+   "name": "금도끼복권방",
+   "address": "경기 양평군 용문로 812 1층",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.507256,
+   "lng": 127.63167
+  },
+  {
+   "id": "14140867",
+   "name": "복권연구소",
+   "address": "경기 양평군 용문산로 8 1층 1,2호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.49878,
+   "lng": 127.60443
+  },
+  {
+   "id": "14141455",
+   "name": "여기가좋겠네",
+   "address": "경기 양평군 경강로 2758 1층 세븐일레븐",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-775-1131",
+   "lat": 37.484261,
+   "lng": 127.577526
+  },
+  {
+   "id": "14190001",
+   "name": "천하명당복권방",
+   "address": "경기 안성시 중앙로 424",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-674-8267",
+   "lat": 37.0066,
+   "lng": 127.27375
+  },
+  {
+   "id": "14190103",
+   "name": "까치복권방",
+   "address": "경기 시흥시 중심상가로 326 1층102",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-432-7556",
+   "lat": 37.336692,
+   "lng": 126.74824
+  },
+  {
+   "id": "14190104",
+   "name": "용꿈돼지꿈복권방",
+   "address": "경기 시흥시 하중로 235 법조타운103호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.39083,
+   "lng": 126.80657
+  },
+  {
+   "id": "14100549",
+   "name": "버스표가두판매점",
+   "address": "경기 수원시 팔달구 중부대로 171-2 가로판매대11",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-215-6313",
+   "lat": 37.277617,
+   "lng": 127.0351
+  },
+  {
+   "id": "14100548",
+   "name": "로또명당매표소",
+   "address": "경기 수원시 팔달구 중부대로223번길 4 1층 지니초밥앞",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-212-3673",
+   "lat": 37.276153,
+   "lng": 127.04098
+  },
+  {
+   "id": "14141321",
+   "name": "수원역로또맛집",
+   "address": "경기 수원시 팔달구 덕영대로 907 1층 6호(매산로1가)",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.267674,
+   "lng": 127.0005
+  },
+  {
+   "id": "14130001",
+   "name": "일등로또",
+   "address": "경기 수원시 장안구 대평로 86 116호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-271-1661",
+   "lat": 37.295992,
+   "lng": 126.99328
+  },
+  {
+   "id": "14140418",
+   "name": "도깨비복권",
+   "address": "경기 수원시 장안구 정조로933번길 12 1층(영화동)",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.290671,
+   "lng": 127.01185
+  },
+  {
+   "id": "14140768",
+   "name": "금곡로",
+   "address": "경기 수원시 권선구 금곡로197번길 18-23 105호(금곡동, 해피라움블루)",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.275054,
+   "lng": 126.95274
+  },
+  {
+   "id": "14190078",
+   "name": "복권닷컴",
+   "address": "경기 성남시 수정구 탄리로 79 1층",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-721-9767",
+   "lat": 37.443002,
+   "lng": 127.1356
+  },
+  {
+   "id": "14141218",
+   "name": "스마일로또",
+   "address": "경기 부천시 경인로 20 상가동 지1층 13호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.48296,
+   "lng": 126.7572
+  },
+  {
+   "id": "14110027",
+   "name": "행운 아이스크림 로또 판매점",
+   "address": "경기 부천시 부일로 434-1 1층",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "032-667-6001",
+   "lat": 37.486341,
+   "lng": 126.77836
+  },
+  {
+   "id": "14100411",
+   "name": "풍전슈퍼",
+   "address": "경기 부천시 조마루로 428",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "032-664-8909",
+   "lat": 37.497089,
+   "lng": 126.79116
+  },
+  {
+   "id": "14100357",
+   "name": "차부상회",
+   "address": "경기 김포시 조강로 50",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-988-0204",
+   "lat": 37.690348,
+   "lng": 126.60033
+  },
+  {
+   "id": "14100357",
+   "name": "차부상회",
+   "address": "경기 김포시 조강로 50",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-988-0204",
+   "lat": 37.690348,
+   "lng": 126.60033
+  },
+  {
+   "id": "14110190",
+   "name": "로또복권판매점",
+   "address": "경기 김포시 김포대로 2082 상가1호매장내",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-984-2975",
+   "lat": 37.685102,
+   "lng": 126.61315
+  },
+  {
+   "id": "14141992",
+   "name": "로또킹",
+   "address": "경기 광명시 기아로 46 1층 108-1호(소하동)",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.435971,
+   "lng": 126.88459
+  },
+  {
+   "id": "14190047",
+   "name": "복권천국",
+   "address": "경기 광명시 기아로 6",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "02-897-9174",
+   "lat": 37.436355,
+   "lng": 126.88039
+  },
+  {
+   "id": "14130090",
+   "name": "밤가시복권방",
+   "address": "경기 고양시 일산동구 일산로 428 101호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.673008,
+   "lng": 126.7792
+  },
+  {
+   "id": "14110561",
+   "name": "마두5번출구가판로또",
+   "address": "경기 고양시 일산동구 중앙로 1200",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 37.653793,
+   "lng": 126.7772
+  },
+  {
+   "id": "14290006",
+   "name": "주택복권방",
+   "address": "강원 원주시 우산초교길 29 1층",
+   "region": "강원",
+   "purchaseType": null,
+   "phone": "033-744-0410",
+   "lat": 37.367358,
+   "lng": 127.93793
+  },
+  {
+   "id": "14200071",
+   "name": "동명수퍼",
+   "address": "강원 속초시 중앙로 205 GS25동명점",
+   "region": "강원",
+   "purchaseType": null,
+   "phone": "033-633-3059",
+   "lat": 38.208878,
+   "lng": 128.59277
+  },
+  {
+   "id": "14230007",
+   "name": "강릉성산점",
+   "address": "강원 강릉시 구산길 58 1층 복권판매점",
+   "region": "강원",
+   "purchaseType": null,
+   "phone": "033-647-7264",
+   "lat": 37.715825,
+   "lng": 128.830596
+  },
+  {
+   "id": "14310054",
+   "name": "행운을주는사람들",
+   "address": "충북 충주시 연수상가길 42 1층 복권방",
+   "region": "충북",
+   "purchaseType": null,
+   "phone": "043-847-3377",
+   "lat": 36.987646,
+   "lng": 127.93162
+  },
+  {
+   "id": "14340169",
+   "name": "천하명당동남점",
+   "address": "충북 청주시 상당구 중고개로125번길 31-3",
+   "region": "충북",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.614824,
+   "lng": 127.51604
+  },
+  {
+   "id": "14440058",
+   "name": "대박복권",
+   "address": "충남 홍성군 충서로 2423 세븐일레븐",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.637655,
+   "lng": 126.74352
+  },
+  {
+   "id": "14440058",
+   "name": "대박복권",
+   "address": "충남 홍성군 충서로 2423 세븐일레븐",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.637655,
+   "lng": 126.74352
+  },
+  {
+   "id": "14440058",
+   "name": "대박복권",
+   "address": "충남 홍성군 충서로 2423 세븐일레븐",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.637655,
+   "lng": 126.74352
+  },
+  {
+   "id": "14440058",
+   "name": "대박복권",
+   "address": "충남 홍성군 충서로 2423 세븐일레븐",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.637655,
+   "lng": 126.74352
+  },
+  {
+   "id": "14440058",
+   "name": "대박복권",
+   "address": "충남 홍성군 충서로 2423 세븐일레븐",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.637655,
+   "lng": 126.74352
+  },
+  {
+   "id": "14400078",
+   "name": "청룡마트",
+   "address": "충남 천안시 동남구 풍세로 1010-31 현대아파트상가B-102호",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "070-8825-9937",
+   "lat": 36.797616,
+   "lng": 127.155
+  },
+  {
+   "id": "14410005",
+   "name": "둔포로또판매점",
+   "address": "충남 아산시 충무로 1810 둔포로또판매점",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.930681,
+   "lng": 127.03849
+  },
+  {
+   "id": "14420028",
+   "name": "충무로또45국도점",
+   "address": "충남 아산시 충무로 647",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.836643,
+   "lng": 127.01092
+  },
+  {
+   "id": "14490003",
+   "name": "서산 터미널복권방",
+   "address": "충남 서산시 안견로 190",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "041-664-3620",
+   "lat": 36.781892,
+   "lng": 126.458651
+  },
+  {
+   "id": "14410112",
+   "name": "로또명당해미점",
+   "address": "충남 서산시 남문2로 108",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "041-688-6004",
+   "lat": 36.71344,
+   "lng": 126.544188
+  },
+  {
+   "id": "14490004",
+   "name": "복권명당",
+   "address": "충남 공주시 번영1로 41",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "041-857-8252",
+   "lat": 36.471857,
+   "lng": 127.13309
+  },
+  {
+   "id": "14490004",
+   "name": "복권명당",
+   "address": "충남 공주시 번영1로 41",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "041-857-8252",
+   "lat": 36.471857,
+   "lng": 127.13309
+  },
+  {
+   "id": "14540206",
+   "name": "팔복일등복권방",
+   "address": "전북 전주시 덕진구 기린대로 704",
+   "region": "전북",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.853951,
+   "lng": 127.104986
+  },
+  {
+   "id": "14610106",
+   "name": "종합복권방",
+   "address": "전남광주 해남군 해남로 34",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": "061-536-8161",
+   "lat": 34.570811,
+   "lng": 126.61085
+  },
+  {
+   "id": "14640138",
+   "name": "독천 로또",
+   "address": "전남광주 영암군 영산로 27 1층",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 34.725683,
+   "lng": 126.56768
+  },
+  {
+   "id": "14700072",
+   "name": "성심상회",
+   "address": "경북 포항시 북구 불종로 78",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-247-3289",
+   "lat": 36.038145,
+   "lng": 129.368
+  },
+  {
+   "id": "14730001",
+   "name": "씨유(CU)포항원리원농점",
+   "address": "경북 포항시 남구 원동로 75 1층 CU편의점내",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-293-3397",
+   "lat": 35.969723,
+   "lng": 129.40235
+  },
+  {
+   "id": "14740302",
+   "name": "공단로또명당",
+   "address": "경북 포항시 남구 철강로 200 1층(장흥동)",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.986106,
+   "lng": 129.3638
+  },
+  {
+   "id": "14700094",
+   "name": "NG24",
+   "address": "경북 칠곡군 북중리3길 59",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-977-2555",
+   "lat": 36.079802,
+   "lng": 128.41185
+  },
+  {
+   "id": "14740291",
+   "name": "행운복권방",
+   "address": "경북 청송군 진보로 118-3",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 36.528321,
+   "lng": 129.04493
+  },
+  {
+   "id": "14700167",
+   "name": "행운의집제1호점",
+   "address": "경북 안동시 영가로 24",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-843-5511",
+   "lat": 36.565144,
+   "lng": 128.73332
+  },
+  {
+   "id": "14700098",
+   "name": "코리아25옥계점",
+   "address": "경북 구미시 산호대로25길 18-4",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-473-6320",
+   "lat": 36.138356,
+   "lng": 128.41648
+  },
+  {
+   "id": "14700097",
+   "name": "노다지구미황상",
+   "address": "경북 구미시 수출대로 555",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-474-2551",
+   "lat": 36.110894,
+   "lng": 128.42572
+  },
+  {
+   "id": "14800144",
+   "name": "로또방",
+   "address": "경남 창원시 의창구 봉곡로 81",
+   "region": "경남",
+   "purchaseType": null,
+   "phone": "055-237-4411",
+   "lat": 35.249267,
+   "lng": 128.66836
+  },
+  {
+   "id": "14810122",
+   "name": "목화휴게소",
+   "address": "경남 사천시 사천대로 912",
+   "region": "경남",
+   "purchaseType": null,
+   "phone": "055-835-2780",
+   "lat": 35.001748,
+   "lng": 128.05415
+  },
+  {
+   "id": "14840146",
+   "name": "로또명당",
+   "address": "경남 김해시 서부로 1629 메카마트 내",
+   "region": "경남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.237359,
+   "lng": 128.829944
+  },
+  {
+   "id": "14840422",
+   "name": "씨유거제사등새아침점",
+   "address": "경남 거제시 거제대로 5501 주2동 103호,104호",
+   "region": "경남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 34.910634,
+   "lng": 128.54363
+  },
+  {
+   "id": "14840123",
+   "name": "로또판매점",
+   "address": "경남 거제시 중곡로3길 46 1층",
+   "region": "경남",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 34.893743,
+   "lng": 128.62582
+  },
+  {
+   "id": "14900009",
+   "name": "제주대림점",
+   "address": "제주 제주시 과원북2길 48",
+   "region": "제주",
+   "purchaseType": null,
+   "phone": "064-746-5525",
+   "lat": 33.478722,
+   "lng": 126.4876
+  },
+  {
+   "id": "14940066",
+   "name": "승승장구",
+   "address": "제주 서귀포시 한창로 606",
+   "region": "제주",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 33.31136,
+   "lng": 126.34008
+  }
+ ],
+ "fetchedAt": "2026-10-06T13:40:56+0900",
+ "shopsBackfilledAt": "2026-10-06T17:34:49+0900"
 }
