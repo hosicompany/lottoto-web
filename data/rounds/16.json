@@ -45,5 +45,6 @@
  "totalSales": 75777348000,
  "winners1": [],
  "winners2": [],
- "fetchedAt": "2026-10-06T17:10:54+0900"
+ "fetchedAt": "2026-10-06T17:10:54+0900",
+ "shopsBackfilledAt": "2026-10-06T23:32:27+0900"
 }

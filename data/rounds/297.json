@@ -43,7 +43,310 @@
   }
  ],
  "totalSales": 43641475000,
- "winners1": [],
- "winners2": [],
- "fetchedAt": "2026-10-06T16:51:04+0900"
+ "winners1": [
+  {
+   "id": "22600055",
+   "name": "GS25(명륜중앙점)",
+   "address": "",
+   "region": "",
+   "purchaseType": "자동",
+   "phone": "051-556-8391",
+   "lat": 35.212571,
+   "lng": 129.078671
+  },
+  {
+   "id": "14110457",
+   "name": "행운로또복권",
+   "address": "",
+   "region": "",
+   "purchaseType": "자동",
+   "phone": "031-378-4085",
+   "lat": 37.14877,
+   "lng": 127.068876
+  }
+ ],
+ "winners2": [
+  {
+   "id": "11100292",
+   "name": "하임마트",
+   "address": "서울 중구 퇴계로 439-4 1층",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-2233-6388",
+   "lat": 37.565914,
+   "lng": 127.0208
+  },
+  {
+   "id": "11110131",
+   "name": "해피원",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "02-352-1708",
+   "lat": 37.601253,
+   "lng": 126.93322
+  },
+  {
+   "id": "21100471",
+   "name": "CU(용산신창점)",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "02-702-0761",
+   "lat": 37.535258,
+   "lng": 126.955627
+  },
+  {
+   "id": "11110484",
+   "name": "로또판매점",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "02-722-6484",
+   "lat": 37.584632,
+   "lng": 126.948908
+  },
+  {
+   "id": "11101136",
+   "name": "Q마트",
+   "address": "서울 동작구 장승배기로 146",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-822-5008",
+   "lat": 37.510499,
+   "lng": 126.94036
+  },
+  {
+   "id": "11101180",
+   "name": "버스카드판매대",
+   "address": "서울 관악구 신림로 145-2",
+   "region": "서울",
+   "purchaseType": null,
+   "phone": "02-888-9905",
+   "lat": 37.471967,
+   "lng": 126.9333
+  },
+  {
+   "id": "11101181",
+   "name": "버스카드충전소",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "02-875-8999",
+   "lat": 37.476498,
+   "lng": 126.965612
+  },
+  {
+   "id": "22600042",
+   "name": "GS25(대연중앙점)",
+   "address": "부산 남구 수영로 244",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": "051-626-6554",
+   "lat": 35.13495,
+   "lng": 129.09333
+  },
+  {
+   "id": "12600174",
+   "name": "성림슈퍼",
+   "address": "부산 금정구 금강로335번길 106 이마트24편의점 내",
+   "region": "부산",
+   "purchaseType": null,
+   "phone": null,
+   "lat": 35.238035,
+   "lng": 129.08069
+  },
+  {
+   "id": "12700154",
+   "name": "대명편의점",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "053-551-6036",
+   "lat": 35.873765,
+   "lng": 128.547022
+  },
+  {
+   "id": "12790042",
+   "name": "복권천하(읍내점)",
+   "address": "프라임프라자1층코너101",
+   "region": "",
+   "purchaseType": null,
+   "phone": "053-326-1466",
+   "lat": 35.942672,
+   "lng": 128.56398
+  },
+  {
+   "id": "12890049",
+   "name": "행운복권",
+   "address": "인천 미추홀구 인하로 354",
+   "region": "인천",
+   "purchaseType": null,
+   "phone": "032-441-8245",
+   "lat": 37.447985,
+   "lng": 126.68764
+  },
+  {
+   "id": "13190031",
+   "name": "프라임24시편의점",
+   "address": "울산 북구 아진로 78",
+   "region": "울산",
+   "purchaseType": null,
+   "phone": "052-286-0610",
+   "lat": 35.630427,
+   "lng": 129.34032
+  },
+  {
+   "id": "14190035",
+   "name": "삼일",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "031-632-2037",
+   "lat": 37.282116,
+   "lng": 127.44674
+  },
+  {
+   "id": "14110244",
+   "name": "복권방",
+   "address": "새재타운1층101호",
+   "region": "",
+   "purchaseType": null,
+   "phone": "031-404-5943",
+   "lat": 37.380952,
+   "lng": 126.799567
+  },
+  {
+   "id": "14110401",
+   "name": "꿈에본그자리",
+   "address": "경기 성남시 중원구 산성대로 458",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-742-6888",
+   "lat": 37.452456,
+   "lng": 127.160622
+  },
+  {
+   "id": "14100446",
+   "name": "노다지복권방",
+   "address": "경기 부천시 양지로 205 1층 118호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "032-657-9290",
+   "lat": 37.467715,
+   "lng": 126.82409
+  },
+  {
+   "id": "14100695",
+   "name": "팬시코아",
+   "address": "경기 남양주시 퇴계원로 48",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "031-574-9810",
+   "lat": 37.650974,
+   "lng": 127.14217
+  },
+  {
+   "id": "14100829",
+   "name": "로토피아",
+   "address": "경기 광명시 오리로 371 상가1층102호",
+   "region": "경기",
+   "purchaseType": null,
+   "phone": "02-899-0789",
+   "lat": 37.435593,
+   "lng": 126.87926
+  },
+  {
+   "id": "14210098",
+   "name": "예미로또",
+   "address": "",
+   "region": "",
+   "purchaseType": null,
+   "phone": "033-378-2547",
+   "lat": 37.218087,
+   "lng": 128.64543
+  },
+  {
+   "id": "14290007",
+   "name": "행운유통",
+   "address": "강원 원주시 남원로 656 1층",
+   "region": "강원",
+   "purchaseType": null,
+   "phone": "033-764-0220",
+   "lat": 37.341125,
+   "lng": 127.95393
+  },
+  {
+   "id": "14490017",
+   "name": "충청복권전문점",
+   "address": "충남 천안시 서북구 성환2로 108",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "041-584-3740",
+   "lat": 36.916957,
+   "lng": 127.13285
+  },
+  {
+   "id": "14490025",
+   "name": "777천하명당",
+   "address": "충남 서천군 충절로 54",
+   "region": "충남",
+   "purchaseType": null,
+   "phone": "041-953-9900",
+   "lat": 36.074877,
+   "lng": 126.68906
+  },
+  {
+   "id": "14690006",
+   "name": "학동복권나라",
+   "address": "전남광주 여수시 흥국로 6",
+   "region": "전남광주",
+   "purchaseType": null,
+   "phone": "061-691-7740",
+   "lat": 34.763569,
+   "lng": 127.66346
+  },
+  {
+   "id": "14700066",
+   "name": "씨스페이스 경주세방매점",
+   "address": "경북 경주시 산업로 4447 (용강동)",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "054-775-1351",
+   "lat": 35.876705,
+   "lng": 129.22648
+  },
+  {
+   "id": "14790005",
+   "name": "대길통상",
+   "address": "경북 경산시 공단로 478",
+   "region": "경북",
+   "purchaseType": null,
+   "phone": "053-857-0645",
+   "lat": 35.874176,
+   "lng": 128.81923
+  },
+  {
+   "id": "24800014",
+   "name": "GS25(마산창동점)",
+   "address": "경남 창원시 마산합포구 3·15대로 376",
+   "region": "경남",
+   "purchaseType": null,
+   "phone": "055-242-1343",
+   "lat": 35.208244,
+   "lng": 128.574379
+  },
+  {
+   "id": "14810004",
+   "name": "덕산로또",
+   "address": "덕산베스트타운101",
+   "region": "",
+   "purchaseType": null,
+   "phone": "055-638-4067",
+   "lat": 34.897164,
+   "lng": 128.63033
+  }
+ ],
+ "fetchedAt": "2026-10-06T16:51:04+0900",
+ "shopsBackfilledAt": "2026-10-06T22:03:07+0900"
 }
