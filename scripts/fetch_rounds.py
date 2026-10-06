@@ -35,7 +35,7 @@ HEADERS_BASE = {
 }
 
 
-def get_json(path: str, query: dict, referer: str, timeout: int = 20) -> dict:
+def get_json(path: str, query: dict, referer: str, timeout: int = 75) -> dict:
     url = f"{HOST}{path}?{urllib.parse.urlencode(query)}"
     req = urllib.request.Request(url, headers={**HEADERS_BASE, "Referer": referer})
     with urllib.request.urlopen(req, timeout=timeout) as res:
@@ -124,7 +124,7 @@ def sleep_jitter(base: float) -> None:
     time.sleep(base + random.uniform(0.2, 0.8))
 
 
-def collect_round(round_no: int, delay: float) -> bool:
+def collect_round(round_no: int, delay: float, with_shops: bool = True) -> bool:
     out = OUT / f"{round_no}.json"
     if out.exists():
         return True
@@ -132,14 +132,55 @@ def collect_round(round_no: int, delay: float) -> bool:
     if raw is None:
         print(f"[{round_no}] 미공개 — 건너뜀", file=sys.stderr)
         return False
-    sleep_jitter(delay)
-    shops1 = fetch_shops(round_no, 1)
-    sleep_jitter(delay)
-    shops2 = fetch_shops(round_no, 2)
+    shops1: list[dict] = []
+    shops2: list[dict] = []
+    if with_shops:
+        sleep_jitter(delay)
+        shops1 = fetch_shops(round_no, 1)
+        sleep_jitter(delay)
+        shops2 = fetch_shops(round_no, 2)
     doc = normalize(raw, shops1, shops2)
     out.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"[{round_no}] 저장 — {doc['drawDate']} 1등 {len(shops1)}곳 2등 {len(shops2)}곳")
     return True
+
+
+def backfill_shops(rounds: list[int], limit: int, delay: float) -> int:
+    """`--no-shops` 로 받은 회차에 배출점을 채운다. 최신 회차부터, 상한까지만."""
+    done = 0
+    failures = 0
+    for r in rounds:
+        path = OUT / f"{r}.json"
+        if not path.exists():
+            continue
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        if doc.get("winners1") or doc.get("shopsBackfilledAt"):
+            continue
+        if done >= limit:
+            print(f"상한 {limit}회차 도달", file=sys.stderr)
+            break
+        try:
+            doc["winners1"] = fetch_shops(r, 1)
+            sleep_jitter(delay)
+            doc["winners2"] = fetch_shops(r, 2)
+        except urllib.error.HTTPError as e:
+            print(f"[{r}] HTTP {e.code} — 중단", file=sys.stderr)
+            return 2
+        except (urllib.error.URLError, TimeoutError, RuntimeError) as e:
+            failures += 1
+            print(f"[{r}] 배출점 실패: {e}", file=sys.stderr)
+            if failures >= 3:
+                return 2
+            sleep_jitter(delay * 5)
+            continue
+        doc["shopsBackfilledAt"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")  # 빈 결과도 '시도함'으로 남겨 무한 재시도 방지
+        path.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"[{r}] 배출점 보강 — 1등 {len(doc['winners1'])}곳 2등 {len(doc['winners2'])}곳")
+        done += 1
+        failures = 0
+        sleep_jitter(delay)
+    print(f"배출점 보강 완료: {done}회차")
+    return 0
 
 
 def main() -> int:
@@ -149,6 +190,8 @@ def main() -> int:
     ap.add_argument("--latest", action="store_true", help="최신 회차 1개만")
     ap.add_argument("--max", type=int, default=400, help="이번 실행에서 새로 받을 회차 상한")
     ap.add_argument("--delay", type=float, default=1.0, help="호출 간 기본 대기(초)")
+    ap.add_argument("--no-shops", action="store_true", help="당첨 결과만(호출 1/3) — 배출점은 --backfill-shops 로 나중에")
+    ap.add_argument("--backfill-shops", action="store_true", help="배출점이 빈 저장 회차에 배출점만 채운다")
     args = ap.parse_args()
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -161,6 +204,9 @@ def main() -> int:
     else:
         rounds = list(range(latest + 1, 0, -1))
 
+    if args.backfill_shops:
+        return backfill_shops(rounds, args.max, args.delay)
+
     done = 0
     failures = 0
     for r in rounds:
@@ -170,7 +216,7 @@ def main() -> int:
             print(f"상한 {args.max}회차 도달 — 다음 실행에서 이어서 수집", file=sys.stderr)
             break
         try:
-            ok = collect_round(r, args.delay)
+            ok = collect_round(r, args.delay, with_shops=not args.no_shops)
         except urllib.error.HTTPError as e:
             print(f"[{r}] HTTP {e.code} — 중단(레이트리밋 가능성)", file=sys.stderr)
             return 2
