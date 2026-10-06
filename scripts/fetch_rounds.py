@@ -21,6 +21,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import http.client
 from pathlib import Path
 
 HOST = "https://www.dhlottery.co.kr"
@@ -166,7 +167,7 @@ def backfill_shops(rounds: list[int], limit: int, delay: float) -> int:
         except urllib.error.HTTPError as e:
             print(f"[{r}] HTTP {e.code} — 중단", file=sys.stderr)
             return 2
-        except (urllib.error.URLError, TimeoutError, RuntimeError) as e:
+        except (urllib.error.URLError, TimeoutError, RuntimeError, http.client.HTTPException, OSError) as e:
             failures += 1
             print(f"[{r}] 배출점 실패: {e}", file=sys.stderr)
             if failures >= 3:
@@ -220,7 +221,7 @@ def main() -> int:
         except urllib.error.HTTPError as e:
             print(f"[{r}] HTTP {e.code} — 중단(레이트리밋 가능성)", file=sys.stderr)
             return 2
-        except (urllib.error.URLError, TimeoutError, RuntimeError) as e:
+        except (urllib.error.URLError, TimeoutError, RuntimeError, http.client.HTTPException, OSError) as e:
             failures += 1
             print(f"[{r}] 실패: {e}", file=sys.stderr)
             if failures >= 3:
