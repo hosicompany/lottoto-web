@@ -1,0 +1,9 @@
+---
+// AdSense 승인 전: 자리만 잡는다. 승인 후 <ins class="adsbygoogle"> 로 교체하고 Base.astro 의 스크립트를 켠다.
+interface Props { side?: boolean }
+const { side = false } = Astro.props;
+---
+
+<div class={`ad${side ? ' side' : ''}`} aria-hidden="true">
+  <div class="slot">광고 ({side ? '300×250' : '320×100'})</div>
+</div>

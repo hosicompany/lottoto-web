@@ -1,0 +1,17 @@
+---
+import { ballColor } from '../lib/data';
+interface Props { numbers: number[]; bonus?: number; size?: 'sm' | 'md'; label?: boolean }
+const { numbers, bonus, size = 'md', label = true } = Astro.props;
+const cls = size === 'sm' ? 'ball sm' : 'ball';
+---
+
+<div class="balls" aria-label={`당첨번호 ${numbers.join(', ')}${bonus ? ` 보너스 ${bonus}` : ''}`}>
+  {numbers.map((n) => <span class={`${cls} ${ballColor(n)}`}>{n}</span>)}
+  {bonus !== undefined && (
+    <>
+      <span class="plus" aria-hidden="true">+</span>
+      <span class={`${cls} ${ballColor(bonus)}`}>{bonus}</span>
+      {label && <span class="bonus-label">보너스</span>}
+    </>
+  )}
+</div>

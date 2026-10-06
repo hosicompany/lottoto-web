@@ -1,0 +1,18 @@
+---
+interface Props { side?: boolean }
+const { side = false } = Astro.props;
+---
+
+<a class="app-banner" href="/app">
+  <span class="icon" aria-hidden="true">또</span>
+  <span>
+    <span class="t">{side ? '매주 번호 확인이 번거롭다면' : '번호를 저장해두면 토요일 밤에 결과를 알려드려요'}</span>
+    <span class="d">{side ? '로또또 앱에 번호를 저장해두면 추첨 직후 등수를 알려드립니다. QR 스캔으로 용지째 등록할 수 있습니다.' : '로또또 앱 · 무료 · QR 스캔 등록'}</span>
+    {side && (
+      <span class="stores">
+        <span>Google Play</span>
+        <span>App Store</span>
+      </span>
+    )}
+  </span>
+</a>

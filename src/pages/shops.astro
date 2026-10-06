@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { hallOfFame, latest, mapUrl, rounds } from '../lib/data';
+
+const WINDOW = 52;
+const entries = hallOfFame(WINDOW);
+const multi = entries.filter((e) => e.rounds.length >= 2);
+const once = entries.filter((e) => e.rounds.length === 1);
+const oldest = rounds[Math.min(WINDOW, rounds.length) - 1];
+const regionAgg = new Map<string, number>();
+for (const e of entries) regionAgg.set(e.region || '기타', (regionAgg.get(e.region || '기타') ?? 0) + e.rounds.length);
+const regions = [...regionAgg.entries()].sort((a, b) => b[1] - a[1]);
+const title = '로또 1등 배출점 랭킹 (최근 1년)';
+const description = `최근 ${WINDOW}회차(${oldest.round}~${latest.round}회) 로또 1등 배출점을 판매점별로 누적했습니다. 2회 이상 배출 ${multi.length}곳, 지역별 배출 현황과 주소·지도.`;
+---
+
+<Base title={title} description={description} path="/shops" nav="shops">
+  <section class="card hero" style="margin-top:12px">
+    <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>1등 배출점</b></nav>
+    <h1>{title}</h1>
+    <p class="date">{oldest.round}회 ~ {latest.round}회 · 매주 갱신</p>
+    <div class="stats">
+      <div class="stat"><div class="k">1등 배출 판매점</div><div class="v">{entries.length}곳</div></div>
+      <div class="stat"><div class="k">2회 이상 배출</div><div class="v blue">{multi.length}곳</div></div>
+      <div class="stat"><div class="k">최다 배출</div><div class="v">{entries[0]?.rounds.length ?? 0}회</div></div>
+      <div class="stat"><div class="k">배출 1위 지역</div><div class="v">{regions[0]?.[0] ?? '—'}</div></div>
+    </div>
+    <p class="notice">1등 배출 횟수는 판매량이 많은 곳일수록 높게 나타납니다. 특정 판매점에서 구매한다고 당첨 확률이 달라지지 않습니다.</p>
+  </section>
+
+  <AdSlot />
+
+  <section class="card">
+    <div class="card-head"><h2>지역별 1등 배출</h2><p class="sub">최근 {WINDOW}회차 합계</p></div>
+    <div class="chips">
+      {regions.map(([r, n]) => <span class="chip">{r} {n}</span>)}
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>2회 이상 배출 {multi.length}곳</h2><p class="sub">배출 회차가 많은 순</p></div>
+    {multi.map((e, i) => (
+      <div class="shop">
+        <b style={`width:22px;color:${i < 3 ? 'var(--blue)' : 'var(--assist)'}`}>{i + 1}</b>
+        <div class="info">
+          <div class="name">{e.name}<span class="tag">{e.rounds.length}회</span></div>
+          <div class="addr">{e.address} · {e.rounds.map((r) => `${r}회`).join(', ')}</div>
+        </div>
+        <a class="btn-map" href={mapUrl({ name: e.name, address: e.address } as any)} target="_blank" rel="noopener">지도</a>
+      </div>
+    ))}
+  </section>
+
+  <details class="card second">
+    <summary>1회 배출 {once.length}곳</summary>
+    <div class="list">
+      {once.map((e) => (
+        <div class="shop">
+          <div class="info">
+            <div class="name">{e.name}</div>
+            <div class="addr">{e.address} · <a href={`/round/${e.rounds[0]}`}>{e.rounds[0]}회</a></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </details>
+</Base>

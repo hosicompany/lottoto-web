@@ -1,0 +1,67 @@
+---
+// 회차 데이터는 data-* 로 넘기고 대조는 브라우저에서만 한다(번호는 서버로 가지 않는다).
+import type { Round } from '../lib/data';
+interface Props { round: Round; compact?: boolean }
+const { round, compact = false } = Astro.props;
+---
+
+<section class="card" id="check" data-check data-numbers={round.numbers.join(',')} data-bonus={round.bonus} data-round={round.round}>
+  <div class="card-head">
+    <h2>내 번호 맞춰보기</h2>
+    <p class="sub">{compact ? '이 회차 기준 등수를 바로 확인' : '번호 6개를 입력하면 이 회차 등수를 바로 확인합니다'}</p>
+  </div>
+  <form>
+    <div class="inputs">
+      {[0, 1, 2, 3, 4, 5].map((i) => (
+        <input type="number" inputmode="numeric" min="1" max="45" required aria-label={`번호 ${i + 1}`} />
+      ))}
+    </div>
+    <button class="btn btn-primary" type="submit" style="width:100%;margin-top:12px">확인하기</button>
+    <p class="check-result" role="status" aria-live="polite"></p>
+    <p class="assist" style="font-size:11px;margin-top:10px">입력한 번호는 저장되지 않으며 서버로 전송되지 않습니다.</p>
+  </form>
+</section>
+
+<script>
+  const RANK_TEXT: Record<number, string> = {
+    1: '1등 — 6개 모두 일치!',
+    2: '2등 — 5개 + 보너스 일치!',
+    3: '3등 — 5개 일치',
+    4: '4등 — 4개 일치',
+    5: '5등 — 3개 일치 (5,000원)',
+  };
+  document.querySelectorAll<HTMLElement>('[data-check]').forEach((root) => {
+    const win = (root.dataset.numbers ?? '').split(',').map(Number);
+    const bonus = Number(root.dataset.bonus);
+    const form = root.querySelector('form')!;
+    const inputs = [...form.querySelectorAll<HTMLInputElement>('input')];
+    const out = form.querySelector<HTMLElement>('.check-result')!;
+    inputs.forEach((inp, i) => {
+      inp.addEventListener('input', () => {
+        if (inp.value.length >= 2 && i < 5) inputs[i + 1].focus();
+      });
+    });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nums = inputs.map((x) => Number(x.value));
+      const uniq = new Set(nums);
+      if (nums.some((n) => !(n >= 1 && n <= 45)) || uniq.size !== 6) {
+        out.className = 'check-result on';
+        out.textContent = '1~45 사이의 서로 다른 번호 6개를 입력해 주세요.';
+        return;
+      }
+      const hit = nums.filter((n) => win.includes(n));
+      const hasBonus = nums.includes(bonus);
+      let rank = 0;
+      if (hit.length === 6) rank = 1;
+      else if (hit.length === 5 && hasBonus) rank = 2;
+      else if (hit.length === 5) rank = 3;
+      else if (hit.length === 4) rank = 4;
+      else if (hit.length === 3) rank = 5;
+      out.className = `check-result on${rank ? ' win' : ''}`;
+      out.textContent = rank
+        ? `${root.dataset.round}회 ${RANK_TEXT[rank]} · 일치 번호 ${hit.sort((a, b) => a - b).join(', ')}`
+        : `${root.dataset.round}회 낙첨 — 일치 ${hit.length}개${hit.length ? ` (${hit.sort((a, b) => a - b).join(', ')})` : ''}`;
+    });
+  });
+</script>

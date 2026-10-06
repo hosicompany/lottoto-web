@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+import { latest } from '../lib/data';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string; // '/' 또는 '/round/1244'
+  nav?: 'rounds' | 'all' | 'shops' | 'generate';
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+const { title, description, path, nav, jsonLd } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const canonical = `${site}${path === '/' ? '' : path}`;
+const fullTitle = path === '/' ? title : `${title} | 로또또`;
+const navItems = [
+  { key: 'rounds', href: `/round/${latest.round}`, label: '회차별 당첨번호' },
+  { key: 'all', href: '/all', label: '전체 회차' },
+  { key: 'shops', href: '/shops', label: '1등 배출점' },
+  { key: 'generate', href: '/generate', label: '번호 생성기' },
+];
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="로또또" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="theme-color" content="#3366ff" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <!-- AdSense: 승인 후 아래 주석을 풀고 client ID 를 넣는다. 승인 전에는 광고 자리만 둔다. -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="/">로또또</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          {navItems.map((n) => (
+            <a href={n.href} aria-current={nav === n.key ? 'page' : undefined}>{n.label}</a>
+          ))}
+        </nav>
+        <div class="spacer"></div>
+        <form class="search" action="/round/" method="get" data-round-search role="search">
+          <input name="r" type="number" inputmode="numeric" min="1" max={latest.round} placeholder="회차 검색" aria-label="회차 번호" />
+          <button type="submit">이동</button>
+        </form>
+        <a class="btn btn-primary btn-app" href="/app">앱 다운로드</a>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="links">
+          <a href={`/round/${latest.round}`}>회차별 당첨번호</a>
+          <a href="/all">전체 회차 · 엑셀</a>
+          <a href="/shops">1등 배출점 랭킹</a>
+          <a href="/generate">번호 생성기</a>
+          <a href="/app">앱 다운로드</a>
+          <a href="https://hosicompany.github.io/lottoto/privacy.html" rel="noopener">개인정보처리방침</a>
+        </div>
+        <p class="disc">
+          이 사이트는 동행복권과 무관한 개인 운영 정보 사이트입니다. 당첨번호·당첨금·배출점 정보는 동행복권 공개 자료를
+          기반으로 하며, 당첨을 예측하거나 보장하지 않습니다. 복권은 만 19세 이상만 구매할 수 있습니다. 과도한 복권 구매는
+          가계에 부담이 됩니다.
+        </p>
+        <p class="copy">© 2026 HOSI Company</p>
+      </div>
+    </footer>
+    <script>
+      // 회차 검색: /round/?r=1244 대신 정적 경로 /round/1244 로 바로 이동
+      document.querySelectorAll<HTMLFormElement>('[data-round-search]').forEach((f) => {
+        f.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const v = (f.querySelector('input') as HTMLInputElement).value.trim();
+          if (/^\d+$/.test(v)) location.href = `/round/${Number(v)}`;
+        });
+      });
+    </script>
+  </body>
+</html>

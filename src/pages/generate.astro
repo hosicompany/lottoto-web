@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import AdSlot from '../components/AdSlot.astro';
+import AppBanner from '../components/AppBanner.astro';
+import { latest } from '../lib/data';
+const title = '로또 번호 생성기';
+const description = '1~45 중 서로 다른 6개를 완전 무작위로 뽑습니다. 브라우저의 암호학적 난수를 사용하며 당첨 확률과는 무관합니다. 최대 5게임을 한 번에 만들 수 있습니다.';
+---
+
+<Base title={title} description={description} path="/generate" nav="generate">
+  <section class="card hero" style="margin-top:12px">
+    <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>번호 생성기</b></nav>
+    <h1>{title}</h1>
+    <p class="date">완전 무작위 · 당첨 확률과 무관 · 번호는 저장·전송되지 않습니다</p>
+    <div id="games" style="margin-top:16px"></div>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" id="draw">번호 뽑기</button>
+      <button class="btn btn-soft" type="button" id="add">게임 추가</button>
+      <button class="btn btn-soft" type="button" id="copy">복사</button>
+    </div>
+    <p class="notice">로또또 앱에서는 드럼·플링코·사다리 같은 게임으로 뽑고, 저장해두면 {latest.round + 1}회 추첨 후 결과를 알려드립니다.</p>
+  </section>
+
+  <AdSlot />
+  <AppBanner />
+</Base>
+
+<script>
+  const colorOf = (n: number) => (n <= 10 ? 'y' : n <= 20 ? 'b' : n <= 30 ? 'r' : n <= 40 ? 'g' : 'gr');
+  const draw6 = (): number[] => {
+    // 1..45 를 Fisher–Yates 로 섞어 앞 6개 — 완전 균등(앱 draw_service 와 같은 원칙)
+    const pool = Array.from({ length: 45 }, (_, i) => i + 1);
+    const rnd = new Uint32Array(45);
+    crypto.getRandomValues(rnd);
+    for (let i = 44; i > 0; i--) {
+      const j = rnd[i] % (i + 1);
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    return pool.slice(0, 6).sort((a, b) => a - b);
+  };
+  const games = document.getElementById('games')!;
+  const LABEL = ['A', 'B', 'C', 'D', 'E'];
+  let sets: number[][] = [];
+  const render = () => {
+    games.innerHTML = sets
+      .map((s, i) => `<div class="round-row"><div class="no"><b>${LABEL[i]}</b></div><div class="balls">${s.map((n) => `<span class="ball ${colorOf(n)}">${n}</span>`).join('')}</div></div>`)
+      .join('');
+  };
+  const drawAll = () => { sets = sets.map(() => draw6()); render(); };
+  document.getElementById('draw')!.addEventListener('click', () => { if (!sets.length) sets = [[]]; drawAll(); });
+  document.getElementById('add')!.addEventListener('click', () => { if (sets.length < 5) { sets.push(draw6()); render(); } });
+  document.getElementById('copy')!.addEventListener('click', async (e) => {
+    if (!sets.length) return;
+    await navigator.clipboard.writeText(sets.map((s, i) => `${LABEL[i]} ${s.join(' ')}`).join('\n'));
+    const b = e.currentTarget as HTMLButtonElement; b.textContent = '복사됨'; setTimeout(() => (b.textContent = '복사'), 1500);
+  });
+  sets = [draw6()]; render();
+</script>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lottoto.pages.dev/sitemap.xml

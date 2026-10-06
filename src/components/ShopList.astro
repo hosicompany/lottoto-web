@@ -1,0 +1,73 @@
+---
+import { mapUrl, regionCounts, purchaseSummary, shopKey, hallOfFame, isOnlineShop, type Shop } from '../lib/data';
+interface Props { shops: Shop[]; round: number; limit?: number }
+const { shops, round, limit = 6 } = Astro.props;
+const regions = regionCounts(shops);
+const hist = new Map(hallOfFame(52).map((e) => [e.key, e.rounds.length]));
+const histLabel = (s: Shop) => {
+  if (isOnlineShop(s)) return '온라인 구매';
+  const n = hist.get(shopKey(s)) ?? 1;
+  return n >= 2 ? `최근 52회차 ${n}회` : '첫 배출';
+};
+---
+
+<section class="card" id="shops" data-shops>
+  <div class="card-head">
+    <h2>1등 배출점 {shops.length}곳</h2>
+    <p class="sub">{purchaseSummary(shops)} · 판매량이 많은 곳일수록 배출 횟수도 많게 나타납니다</p>
+  </div>
+  {shops.length === 0 && <p class="muted">이 회차의 배출점 정보가 아직 없습니다.</p>}
+  {shops.length > 0 && (
+    <>
+      <div class="chips" role="group" aria-label="지역 필터">
+        <button class="chip" type="button" data-region="" aria-pressed="true">전체 {shops.length}</button>
+        {regions.map(([r, n]) => <button class="chip" type="button" data-region={r} aria-pressed="false">{r} {n}</button>)}
+      </div>
+      <div class="list">
+        {shops.map((s, i) => (
+          <div class="shop" data-region={s.region || '기타'} hidden={i >= limit ? true : undefined} data-overflow={i >= limit ? '' : undefined}>
+            <div class="info">
+              <div class="name">
+                {s.name}
+                {s.purchaseType && <span class={`tag${s.purchaseType === '수동' ? ' manual' : ''}`}>{s.purchaseType}</span>}
+              </div>
+              <div class="addr">{s.address}</div>
+            </div>
+            <span class={`hist${histLabel(s) === '첫 배출' ? ' first' : ''}`}>{histLabel(s)}</span>
+            {!isOnlineShop(s) && <a class="btn-map" href={mapUrl(s)} target="_blank" rel="noopener">지도</a>}
+          </div>
+        ))}
+      </div>
+      {shops.length > limit && (
+        <a class="more" href="#shops" data-more>배출점 {shops.length}곳 모두 보기 ›</a>
+      )}
+    </>
+  )}
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-shops]').forEach((root) => {
+    const rows = [...root.querySelectorAll<HTMLElement>('.shop')];
+    const more = root.querySelector<HTMLAnchorElement>('[data-more]');
+    let expanded = false;
+    let region = '';
+    const apply = () => {
+      let shown = 0;
+      rows.forEach((r) => {
+        const match = !region || r.dataset.region === region;
+        const visible = match && (expanded || region !== '' || shown < 6);
+        if (match) shown += 1;
+        r.hidden = !visible;
+      });
+      if (more) more.hidden = expanded || region !== '';
+    };
+    root.querySelectorAll<HTMLButtonElement>('.chip').forEach((c) => {
+      c.addEventListener('click', () => {
+        region = c.dataset.region ?? '';
+        root.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+        apply();
+      });
+    });
+    more?.addEventListener('click', (e) => { e.preventDefault(); expanded = true; apply(); });
+  });
+</script>

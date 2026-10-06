@@ -1,0 +1,65 @@
+# 매주 토요일 밤 추첨 직후 최신 회차를 수집해 커밋하고, GitHub Pages 로 다시 배포한다.
+# 추첨 20:45 KST → 배출점 데이터는 다음 날 공개되므로 일요일 12:00 KST 에 한 번 더 돈다.
+name: weekly-update
+
+on:
+  schedule:
+    - cron: '10 12 * * 6' # 토 21:10 KST
+    - cron: '0 3 * * 0'   # 일 12:00 KST (배출점 보강)
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: 최신 회차 수집 (이미 있으면 건너뜀)
+        if: github.event_name != 'push'
+        run: |
+          python3 scripts/fetch_rounds.py --latest
+          # 배출점이 비어 있던 최신 회차는 지우고 다시 받는다(토요일 밤에는 배출점이 아직 없다)
+          python3 - <<'EOF'
+          import json, pathlib, subprocess
+          d = pathlib.Path('data/rounds')
+          latest = max(d.glob('*.json'), key=lambda p: int(p.stem))
+          doc = json.loads(latest.read_text())
+          if not doc['winners1']:
+              latest.unlink()
+              subprocess.run(['python3', 'scripts/fetch_rounds.py', '--latest'], check=False)
+          EOF
+      - name: 변경분 커밋
+        if: github.event_name != 'push'
+        run: |
+          git config user.name 'lottoto-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/rounds
+          git diff --cached --quiet || git commit -m "data: $(ls data/rounds | sort -n | tail -1 | sed 's/.json//')회 수집"
+          git push
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

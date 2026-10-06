@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Balls from '../components/Balls.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { rounds, latest, formatShortDate, formatWon } from '../lib/data';
+
+const title = `로또 당첨번호 전체보기 (1회~${latest.round}회)`;
+const description = `로또 1회부터 ${latest.round}회까지 전체 회차 당첨번호와 보너스 번호, 1등 당첨금을 한 표로 봅니다. 엑셀(CSV)로 내려받을 수 있습니다.`;
+---
+
+<Base title={title} description={description} path="/all" nav="all">
+  <section class="card hero" style="margin-top:12px">
+    <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>전체 회차</b></nav>
+    <h1>{title}</h1>
+    <p class="date">매주 토요일 추첨 직후 갱신 · {rounds.length}회차</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/data/lotto.csv" download="lotto_1-{latest.round}.csv">엑셀(CSV) 다운로드</a>
+      <a class="btn btn-soft" href={`/round/${latest.round}`}>최신 회차</a>
+    </div>
+    <div class="search" style="margin-top:14px;max-width:360px">
+      <input id="filter" type="search" placeholder="회차·날짜·번호로 찾기 (예: 1200, 2025, 7)" aria-label="표 필터" style="width:100%" />
+    </div>
+  </section>
+
+  <AdSlot />
+
+  <section class="card">
+    <div id="rows">
+      {rounds.map((x) => (
+        <a class="round-row" href={`/round/${x.round}`} style="color:inherit" data-k={`${x.round} ${x.drawDate} ${x.numbers.join(' ')} ${x.bonus}`}>
+          <div class="no"><b>{x.round}회</b><span>{formatShortDate(x.drawDate)}</span></div>
+          <Balls numbers={x.numbers} bonus={x.bonus} size="sm" label={false} />
+          <span class="amt">1등 {formatWon(x.prizes[0].amount)}</span>
+        </a>
+      ))}
+    </div>
+    <p class="muted" id="empty" hidden style="padding:16px 0;text-align:center">일치하는 회차가 없습니다.</p>
+  </section>
+</Base>
+
+<script>
+  const input = document.getElementById('filter') as HTMLInputElement;
+  const rows = [...document.querySelectorAll<HTMLElement>('#rows .round-row')];
+  const empty = document.getElementById('empty')!;
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    let n = 0;
+    rows.forEach((r) => {
+      const hit = !q || (r.dataset.k ?? '').split(' ').some((t) => t.startsWith(q) || t === q);
+      r.hidden = !hit;
+      if (hit) n += 1;
+    });
+    empty.hidden = n > 0;
+  });
+</script>

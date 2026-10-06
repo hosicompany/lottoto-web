@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import Balls from '../components/Balls.astro';
+import AdSlot from '../components/AdSlot.astro';
+import AppBanner from '../components/AppBanner.astro';
+import NumberCheck from '../components/NumberCheck.astro';
+import { rounds, latest, formatDate, formatWon, formatShortDate, hallOfFame } from '../lib/data';
+
+const first = latest.prizes[0];
+const title = `로또 당첨번호 조회 — ${latest.round}회 최신 결과 | 로또또`;
+const description = `로또 ${latest.round}회(${formatDate(latest.drawDate, false)}) 당첨번호 ${latest.numbers.join(', ')} + ${latest.bonus}. 1회부터 전체 회차 당첨번호·당첨금·1등 배출점을 회차별로 정리했습니다.`;
+const recent = rounds.slice(1, 11);
+const hof = hallOfFame(52).slice(0, 5);
+---
+
+<Base title={title} description={description} path="/" nav="rounds">
+  <div class="layout">
+    <div class="main">
+      <section class="card hero">
+        <p class="muted" style="font-size:13px;margin-bottom:6px">최신 회차</p>
+        <h1>로또 {latest.round}회 당첨번호</h1>
+        <p class="date">{formatDate(latest.drawDate)} 추첨 · 매주 토요일 추첨 직후 갱신</p>
+        <Balls numbers={latest.numbers} bonus={latest.bonus} />
+        <div class="stats">
+          <div class="stat"><div class="k">1등 당첨금</div><div class="v blue">{formatWon(first.amount)}</div></div>
+          <div class="stat"><div class="k">1등 당첨자</div><div class="v">{first.winners}명</div></div>
+          <div class="stat"><div class="k">1등 배출점</div><div class="v">{latest.winners1.length}곳</div></div>
+          <div class="stat"><div class="k">총 판매금액</div><div class="v">{formatWon(latest.totalSales)}</div></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href={`/round/${latest.round}`}>당첨금 · 배출점 자세히</a>
+          <a class="btn btn-soft" href="#check">내 번호 맞춰보기</a>
+        </div>
+      </section>
+
+      <AdSlot />
+
+      <section class="card">
+        <div class="card-head"><h2>최근 회차</h2><p class="sub">회차를 누르면 당첨금과 1등 배출점을 볼 수 있습니다</p></div>
+        {recent.map((x) => (
+          <a class="round-row" href={`/round/${x.round}`} style="color:inherit">
+            <div class="no"><b>{x.round}회</b><span>{formatShortDate(x.drawDate)}</span></div>
+            <Balls numbers={x.numbers} bonus={x.bonus} size="sm" label={false} />
+            <span class="amt">1등 {formatWon(x.prizes[0].amount)}</span>
+          </a>
+        ))}
+        <a class="more" href="/all">1회부터 전체 회차 보기 ›</a>
+      </section>
+
+      <div class="mobile-only">
+        <NumberCheck round={latest} />
+        <AppBanner />
+      </div>
+
+      <section class="card">
+        <div class="card-head"><h2>이 사이트에서 할 수 있는 것</h2></div>
+        <ul style="margin:0;padding-left:18px;line-height:1.8;font-size:14px">
+          <li><a href={`/round/${latest.round}`}>회차별 당첨번호</a> — 번호, 등수별 당첨금과 당첨자 수, 1·2등 배출점 주소와 지도</li>
+          <li><a href="/all">전체 회차 표</a> — 1회부터 한 표로, 엑셀(CSV) 다운로드</li>
+          <li><a href="/shops">1등 배출점 랭킹</a> — 최근 52회차 누적, 지역별</li>
+          <li><a href="/generate">번호 생성기</a> — 완전 무작위 6개 (당첨 확률과 무관)</li>
+        </ul>
+      </section>
+    </div>
+
+    <aside class="side desktop-only">
+      <AdSlot side />
+      <NumberCheck round={latest} compact />
+      <AppBanner side />
+      <section class="card">
+        <div class="card-head"><h2>1등 최다 배출점</h2><p class="sub">최근 52회차 누적</p></div>
+        {hof.map((e, i) => (
+          <div class="shop">
+            <b style={`width:18px;color:${i === 0 ? 'var(--blue)' : 'var(--assist)'}`}>{i + 1}</b>
+            <div class="info"><div class="name" style="font-weight:500">{e.name}</div><div class="addr">{e.region} · {e.rounds.length}회</div></div>
+          </div>
+        ))}
+        <a class="more" href="/shops">랭킹 전체 보기 ›</a>
+      </section>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .desktop-only { display: none; }
+  @media (min-width: 900px) {
+    .desktop-only { display: block; }
+    .mobile-only { display: none; }
+  }
+</style>

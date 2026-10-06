@@ -1,0 +1,148 @@
+---
+import Base from '../../layouts/Base.astro';
+import Balls from '../../components/Balls.astro';
+import PrizeTable from '../../components/PrizeTable.astro';
+import ShopList from '../../components/ShopList.astro';
+import NumberCheck from '../../components/NumberCheck.astro';
+import AppBanner from '../../components/AppBanner.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { rounds, prevNext, formatDate, formatWon, formatShortDate, hallOfFame, mapUrl, type Round } from '../../lib/data';
+
+export function getStaticPaths() {
+  return rounds.map((r) => ({ params: { round: String(r.round) }, props: { r } }));
+}
+const { r } = Astro.props as { r: Round };
+const { prev, next } = prevNext(r);
+const first = r.prizes[0];
+const title = `로또 ${r.round}회 당첨번호`;
+const description = `${formatDate(r.drawDate)} 추첨 로또 ${r.round}회 당첨번호 ${r.numbers.join(', ')} + 보너스 ${r.bonus}. 1등 ${first.winners}명 각 ${formatWon(first.amount)}, 1등 배출점 ${r.winners1.length}곳과 등수별 당첨금.`;
+const recent = rounds.filter((x) => x.round < r.round).slice(0, 3);
+const hof = hallOfFame(52).slice(0, 5);
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    datePublished: r.drawDate,
+    dateModified: r.fetchedAt,
+    author: { '@type': 'Organization', name: 'HOSI Company' },
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '홈', item: Astro.site?.toString() },
+      { '@type': 'ListItem', position: 2, name: '회차별 당첨번호', item: `${Astro.site}round/${rounds[0].round}` },
+      { '@type': 'ListItem', position: 3, name: `${r.round}회` },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path={`/round/${r.round}`} nav="rounds" jsonLd={jsonLd}>
+  <div class="layout">
+    <div class="main">
+      <section class="card hero">
+        <nav class="crumbs" aria-label="현재 위치">
+          <a href="/">홈</a><span class="sep">›</span><a href={`/round/${rounds[0].round}`}>회차별 당첨번호</a><span class="sep">›</span><b>{r.round}회</b>
+        </nav>
+        <h1>{title}</h1>
+        <p class="date">{formatDate(r.drawDate)} 추첨 · 동행복권 공식 결과 기준</p>
+        <Balls numbers={r.numbers} bonus={r.bonus} />
+        <div class="stats">
+          <div class="stat"><div class="k">1등 당첨금</div><div class="v blue">{formatWon(first.amount)}</div></div>
+          <div class="stat"><div class="k">1등 당첨자</div><div class="v">{first.winners}명</div></div>
+          <div class="stat"><div class="k">총 판매금액</div><div class="v">{formatWon(r.totalSales)}</div></div>
+          <div class="stat"><div class="k">1등 배출점</div><div class="v">{r.winners1.length}곳</div></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#check">내 번호 맞춰보기</a>
+          <button class="btn btn-soft" type="button" data-share data-text={`로또 ${r.round}회 당첨번호 ${r.numbers.join(' ')} + ${r.bonus}`}>공유</button>
+          <a class="btn btn-soft" href="/data/lotto.csv" download>엑셀</a>
+        </div>
+      </section>
+
+      <AdSlot />
+
+      <PrizeTable prizes={r.prizes} totalSales={r.totalSales} />
+
+      <ShopList shops={r.winners1} round={r.round} />
+
+      <details class="card second">
+        <summary>2등 배출점 {r.winners2.length}곳</summary>
+        <div class="list">
+          {r.winners2.map((s) => (
+            <div class="shop">
+              <div class="info">
+                <div class="name">{s.name}</div>
+                <div class="addr">{s.address}</div>
+              </div>
+              <a class="btn-map" href={mapUrl(s)} target="_blank" rel="noopener">지도</a>
+            </div>
+          ))}
+        </div>
+      </details>
+
+      <div class="mobile-only">
+        <NumberCheck round={r} />
+        <AppBanner />
+      </div>
+
+      {recent.length > 0 && (
+        <section class="card">
+          <div class="card-head"><h2>이전 회차</h2><p class="sub">당첨번호를 눌러 회차 페이지로 이동</p></div>
+          {recent.map((x) => (
+            <a class="round-row" href={`/round/${x.round}`} style="color:inherit">
+              <div class="no"><b>{x.round}회</b><span>{formatShortDate(x.drawDate)}</span></div>
+              <Balls numbers={x.numbers} bonus={x.bonus} size="sm" label={false} />
+              <span class="amt">1등 {formatWon(x.prizes[0].amount)}</span>
+            </a>
+          ))}
+        </section>
+      )}
+
+      <nav class="round-nav" aria-label="회차 이동">
+        {prev ? <a class="btn btn-line" href={`/round/${prev.round}`}>‹ {prev.round}회</a> : <span class="btn btn-line" aria-disabled="true">첫 회차</span>}
+        <a class="btn btn-line" href="/all">전체 회차</a>
+        {next ? <a class="btn btn-line" href={`/round/${next.round}`}>{next.round}회 ›</a> : <span class="btn btn-line" aria-disabled="true">최신 회차</span>}
+      </nav>
+    </div>
+
+    <aside class="side desktop-only">
+      <AdSlot side />
+      <NumberCheck round={r} compact />
+      <AppBanner side />
+      <section class="card">
+        <div class="card-head"><h2>1등 최다 배출점</h2><p class="sub">최근 52회차 누적</p></div>
+        {hof.map((e, i) => (
+          <div class="shop">
+            <b style={`width:18px;color:${i === 0 ? 'var(--blue)' : 'var(--assist)'}`}>{i + 1}</b>
+            <div class="info"><div class="name" style="font-weight:500">{e.name}</div><div class="addr">{e.region} · {e.rounds.length}회</div></div>
+          </div>
+        ))}
+        <a class="more" href="/shops">랭킹 전체 보기 ›</a>
+      </section>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .desktop-only { display: none; }
+  @media (min-width: 900px) {
+    .desktop-only { display: block; }
+    .mobile-only { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-share]').forEach((b) => {
+    b.addEventListener('click', async () => {
+      const text = `${b.dataset.text}\n${location.href}`;
+      try {
+        if (navigator.share) await navigator.share({ text });
+        else { await navigator.clipboard.writeText(text); b.textContent = '복사됨'; setTimeout(() => (b.textContent = '공유'), 1500); }
+      } catch { /* 사용자가 취소 */ }
+    });
+  });
+</script>

@@ -1,0 +1,28 @@
+---
+import { formatWon, formatCount, PRIZE_CONDITION, type Prize } from '../lib/data';
+interface Props { prizes: Prize[]; totalSales: number }
+const { prizes, totalSales } = Astro.props;
+---
+
+<section class="card" id="prize">
+  <div class="card-head">
+    <h2>등수별 당첨금</h2>
+    <p class="sub">총 판매금액 {formatWon(totalSales)}</p>
+  </div>
+  <table class="tbl">
+    <thead>
+      <tr><th>등수</th><th>당첨자</th><th class="r">1인당 당첨금</th><th>조건</th><th class="total r">등수별 총 당첨금</th></tr>
+    </thead>
+    <tbody>
+      {prizes.map((p) => (
+        <tr class={p.rank === 1 ? 'first' : undefined}>
+          <td class="rank">{p.rank}등</td>
+          <td>{formatCount(p.winners)}</td>
+          <td class="amt r">{formatWon(p.amount)}</td>
+          <td class="cond">{PRIZE_CONDITION[p.rank]}</td>
+          <td class="total r">{formatWon(p.total)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</section>
