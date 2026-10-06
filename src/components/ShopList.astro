@@ -16,7 +16,9 @@ const histLabel = (s: Shop) => {
     <h2>1등 배출점 {shops.length}곳</h2>
     <p class="sub">{purchaseSummary(shops)} · 판매량이 많은 곳일수록 배출 횟수도 많게 나타납니다</p>
   </div>
-  {shops.length === 0 && <p class="muted">이 회차의 배출점 정보가 아직 없습니다.</p>}
+  {shops.length === 0 && (
+    <p class="muted">{round < 262 ? '동행복권은 1등 배출점 정보를 262회(2008년 1월)부터 공개합니다. 이 회차는 제공되지 않습니다.' : '이 회차의 배출점 정보가 아직 공개되지 않았습니다. 보통 추첨 다음 날 반영됩니다.'}</p>
+  )}
   {shops.length > 0 && (
     <>
       <div class="chips" role="group" aria-label="지역 필터">

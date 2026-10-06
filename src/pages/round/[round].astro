@@ -55,7 +55,7 @@ const jsonLd = [
           <div class="stat"><div class="k">1등 당첨금</div><div class="v blue">{first.winners > 0 ? formatWon(first.amount) : '이월'}</div></div>
           <div class="stat"><div class="k">1등 당첨자</div><div class="v">{first.winners > 0 ? `${first.winners}명` : '없음'}</div></div>
           <div class="stat"><div class="k">총 판매금액</div><div class="v">{formatWon(r.totalSales)}</div></div>
-          <div class="stat"><div class="k">1등 배출점</div><div class="v">{r.winners1.length}곳</div></div>
+          <div class="stat"><div class="k">1등 배출점</div><div class="v">{r.winners1.length ? `${r.winners1.length}곳` : r.round < 262 ? '미제공' : '집계 전'}</div></div>
         </div>
         <div class="actions">
           <a class="btn btn-primary" href="#check">내 번호 맞춰보기</a>
