@@ -1,0 +1,49 @@
+{
+ "round": 971,
+ "drawDate": "2021-07-10",
+ "numbers": [
+  2,
+  6,
+  17,
+  18,
+  21,
+  26
+ ],
+ "bonus": 7,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 3725880250,
+   "total": 22355281500
+  },
+  {
+   "rank": 2,
+   "winners": 62,
+   "amount": 60094843,
+   "total": 3725880266
+  },
+  {
+   "rank": 3,
+   "winners": 2685,
+   "amount": 1387665,
+   "total": 3725880525
+  },
+  {
+   "rank": 4,
+   "winners": 131409,
+   "amount": 50000,
+   "total": 6570450000
+  },
+  {
+   "rank": 5,
+   "winners": 2171694,
+   "amount": 5000,
+   "total": 10858470000
+  }
+ ],
+ "totalSales": 94471924000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T15:58:10+0900"
+}

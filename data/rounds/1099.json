@@ -1,0 +1,49 @@
+{
+ "round": 1099,
+ "drawDate": "2023-12-23",
+ "numbers": [
+  3,
+  20,
+  28,
+  38,
+  40,
+  43
+ ],
+ "bonus": 4,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 9,
+   "amount": 2959934125,
+   "total": 26639407125
+  },
+  {
+   "rank": 2,
+   "winners": 71,
+   "amount": 62533820,
+   "total": 4439901220
+  },
+  {
+   "rank": 3,
+   "winners": 2701,
+   "amount": 1643800,
+   "total": 4439903800
+  },
+  {
+   "rank": 4,
+   "winners": 134122,
+   "amount": 50000,
+   "total": 6706100000
+  },
+  {
+   "rank": 5,
+   "winners": 2306011,
+   "amount": 5000,
+   "total": 11530055000
+  }
+ ],
+ "totalSales": 107510729000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T13:42:32+0900"
+}

@@ -1,0 +1,49 @@
+{
+ "round": 455,
+ "drawDate": "2011-08-20",
+ "numbers": [
+  4,
+  19,
+  20,
+  26,
+  30,
+  35
+ ],
+ "bonus": 24,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 7,
+   "amount": 1635711483,
+   "total": 11449980375
+  },
+  {
+   "rank": 2,
+   "winners": 32,
+   "amount": 59635315,
+   "total": 1908330063
+  },
+  {
+   "rank": 3,
+   "winners": 1448,
+   "amount": 1317908,
+   "total": 1908330063
+  },
+  {
+   "rank": 4,
+   "winners": 69056,
+   "amount": 50000,
+   "total": 3452800000
+  },
+  {
+   "rank": 5,
+   "winners": 1133097,
+   "amount": 5000,
+   "total": 5665485000
+  }
+ ],
+ "totalSales": 48769851000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:40:45+0900"
+}

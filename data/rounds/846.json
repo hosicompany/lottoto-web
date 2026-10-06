@@ -1,0 +1,49 @@
+{
+ "round": 846,
+ "drawDate": "2019-02-16",
+ "numbers": [
+  5,
+  18,
+  30,
+  41,
+  43,
+  45
+ ],
+ "bonus": 13,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 13,
+   "amount": 1596884395,
+   "total": 20759497135
+  },
+  {
+   "rank": 2,
+   "winners": 69,
+   "amount": 50143713,
+   "total": 3459916197
+  },
+  {
+   "rank": 3,
+   "winners": 1997,
+   "amount": 1732557,
+   "total": 3459916329
+  },
+  {
+   "rank": 4,
+   "winners": 106009,
+   "amount": 50000,
+   "total": 5300450000
+  },
+  {
+   "rank": 5,
+   "winners": 1797728,
+   "amount": 5000,
+   "total": 8988640000
+  }
+ ],
+ "totalSales": 83936839000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:07:26+0900"
+}

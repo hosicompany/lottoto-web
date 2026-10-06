@@ -1,0 +1,49 @@
+{
+ "round": 943,
+ "drawDate": "2020-12-26",
+ "numbers": [
+  1,
+  8,
+  13,
+  36,
+  44,
+  45
+ ],
+ "bonus": 39,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 7,
+   "amount": 3435045108,
+   "total": 24045315756
+  },
+  {
+   "rank": 2,
+   "winners": 74,
+   "amount": 54156117,
+   "total": 4007552658
+  },
+  {
+   "rank": 3,
+   "winners": 2722,
+   "amount": 1472283,
+   "total": 4007554326
+  },
+  {
+   "rank": 4,
+   "winners": 135763,
+   "amount": 50000,
+   "total": 6788150000
+  },
+  {
+   "rank": 5,
+   "winners": 2238429,
+   "amount": 5000,
+   "total": 11192145000
+  }
+ ],
+ "totalSales": 100081432000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:04:07+0900"
+}

@@ -1,0 +1,49 @@
+{
+ "round": 882,
+ "drawDate": "2019-10-26",
+ "numbers": [
+  18,
+  34,
+  39,
+  43,
+  44,
+  45
+ ],
+ "bonus": 23,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 5,
+   "amount": 4127270400,
+   "total": 20636352000
+  },
+  {
+   "rank": 2,
+   "winners": 44,
+   "amount": 78168000,
+   "total": 3439392000
+  },
+  {
+   "rank": 3,
+   "winners": 2082,
+   "amount": 1651966,
+   "total": 3439393212
+  },
+  {
+   "rank": 4,
+   "winners": 109226,
+   "amount": 50000,
+   "total": 5461300000
+  },
+  {
+   "rank": 5,
+   "winners": 1839873,
+   "amount": 5000,
+   "total": 9199365000
+  }
+ ],
+ "totalSales": 84351602000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:06:11+0900"
+}

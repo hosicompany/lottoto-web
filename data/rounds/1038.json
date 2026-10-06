@@ -1,0 +1,49 @@
+{
+ "round": 1038,
+ "drawDate": "2022-10-22",
+ "numbers": [
+  7,
+  16,
+  24,
+  27,
+  37,
+  44
+ ],
+ "bonus": 2,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 15,
+   "amount": 1627457225,
+   "total": 24411858375
+  },
+  {
+   "rank": 2,
+   "winners": 77,
+   "amount": 52839521,
+   "total": 4068643117
+  },
+  {
+   "rank": 3,
+   "winners": 3364,
+   "amount": 1209466,
+   "total": 4068643624
+  },
+  {
+   "rank": 4,
+   "winners": 154690,
+   "amount": 50000,
+   "total": 7734500000
+  },
+  {
+   "rank": 5,
+   "winners": 2436512,
+   "amount": 5000,
+   "total": 12182560000
+  }
+ ],
+ "totalSales": 104932409000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T15:55:51+0900"
+}

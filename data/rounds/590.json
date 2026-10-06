@@ -1,0 +1,49 @@
+{
+ "round": 590,
+ "drawDate": "2014-03-22",
+ "numbers": [
+  20,
+  30,
+  36,
+  38,
+  41,
+  45
+ ],
+ "bonus": 23,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 7,
+   "amount": 2185183983,
+   "total": 15296287881
+  },
+  {
+   "rank": 2,
+   "winners": 31,
+   "amount": 82238107,
+   "total": 2549381317
+  },
+  {
+   "rank": 3,
+   "winners": 1370,
+   "amount": 1860863,
+   "total": 2549382310
+  },
+  {
+   "rank": 4,
+   "winners": 70019,
+   "amount": 50000,
+   "total": 3500950000
+  },
+  {
+   "rank": 5,
+   "winners": 1221113,
+   "amount": 5000,
+   "total": 6105565000
+  }
+ ],
+ "totalSales": 60003131000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:31:08+0900"
+}

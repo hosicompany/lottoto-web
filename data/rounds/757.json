@@ -1,0 +1,49 @@
+{
+ "round": 757,
+ "drawDate": "2017-06-03",
+ "numbers": [
+  6,
+  7,
+  11,
+  17,
+  33,
+  44
+ ],
+ "bonus": 1,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 21,
+   "amount": 739839858,
+   "total": 15536637018
+  },
+  {
+   "rank": 2,
+   "winners": 68,
+   "amount": 38079993,
+   "total": 2589439524
+  },
+  {
+   "rank": 3,
+   "winners": 2657,
+   "amount": 974573,
+   "total": 2589440461
+  },
+  {
+   "rank": 4,
+   "winners": 117353,
+   "amount": 50000,
+   "total": 5867650000
+  },
+  {
+   "rank": 5,
+   "winners": 1788667,
+   "amount": 5000,
+   "total": 8943335000
+  }
+ ],
+ "totalSales": 71053002000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:15:29+0900"
+}

@@ -1,0 +1,49 @@
+{
+ "round": 579,
+ "drawDate": "2014-01-04",
+ "numbers": [
+  5,
+  7,
+  20,
+  22,
+  37,
+  42
+ ],
+ "bonus": 39,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 11,
+   "amount": 1396068444,
+   "total": 15356752884
+  },
+  {
+   "rank": 2,
+   "winners": 46,
+   "amount": 55640409,
+   "total": 2559458814
+  },
+  {
+   "rank": 3,
+   "winners": 1769,
+   "amount": 1446840,
+   "total": 2559459960
+  },
+  {
+   "rank": 4,
+   "winners": 85011,
+   "amount": 50000,
+   "total": 4250550000
+  },
+  {
+   "rank": 5,
+   "winners": 1408043,
+   "amount": 5000,
+   "total": 7040215000
+  }
+ ],
+ "totalSales": 63532871000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:31:31+0900"
+}

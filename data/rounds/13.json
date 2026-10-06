@@ -1,0 +1,49 @@
+{
+ "round": 13,
+ "drawDate": "2003-03-01",
+ "numbers": [
+  22,
+  23,
+  25,
+  37,
+  38,
+  42
+ ],
+ "bonus": 26,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 0,
+   "amount": 0,
+   "total": 15599134800
+  },
+  {
+   "rank": 2,
+   "winners": 6,
+   "amount": 433309300,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 450,
+   "amount": 5777400,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 29601,
+   "amount": 175600,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 726751,
+   "amount": 10000,
+   "total": 0
+  }
+ ],
+ "totalSales": 66532136000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:11:01+0900"
+}

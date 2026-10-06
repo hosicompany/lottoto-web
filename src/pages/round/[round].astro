@@ -15,7 +15,8 @@ const { r } = Astro.props as { r: Round };
 const { prev, next } = prevNext(r);
 const first = r.prizes[0];
 const title = `로또 ${r.round}회 당첨번호`;
-const description = `${formatDate(r.drawDate)} 추첨 로또 ${r.round}회 당첨번호 ${r.numbers.join(', ')} + 보너스 ${r.bonus}. 1등 ${first.winners}명 각 ${formatWon(first.amount)}, 1등 배출점 ${r.winners1.length}곳과 등수별 당첨금.`;
+const firstText = first.winners > 0 ? `1등 ${first.winners}명 각 ${formatWon(first.amount)}` : '1등 당첨자 없음(이월)';
+const description = `${formatDate(r.drawDate)} 추첨 로또 ${r.round}회 당첨번호 ${r.numbers.join(', ')} + 보너스 ${r.bonus}. ${firstText}${r.winners1.length ? `, 1등 배출점 ${r.winners1.length}곳` : ''}과 등수별 당첨금.`;
 const recent = rounds.filter((x) => x.round < r.round).slice(0, 3);
 const hof = hallOfFame(52).slice(0, 5);
 const jsonLd = [
@@ -51,8 +52,8 @@ const jsonLd = [
         <p class="date">{formatDate(r.drawDate)} 추첨 · 동행복권 공식 결과 기준</p>
         <Balls numbers={r.numbers} bonus={r.bonus} />
         <div class="stats">
-          <div class="stat"><div class="k">1등 당첨금</div><div class="v blue">{formatWon(first.amount)}</div></div>
-          <div class="stat"><div class="k">1등 당첨자</div><div class="v">{first.winners}명</div></div>
+          <div class="stat"><div class="k">1등 당첨금</div><div class="v blue">{first.winners > 0 ? formatWon(first.amount) : '이월'}</div></div>
+          <div class="stat"><div class="k">1등 당첨자</div><div class="v">{first.winners > 0 ? `${first.winners}명` : '없음'}</div></div>
           <div class="stat"><div class="k">총 판매금액</div><div class="v">{formatWon(r.totalSales)}</div></div>
           <div class="stat"><div class="k">1등 배출점</div><div class="v">{r.winners1.length}곳</div></div>
         </div>

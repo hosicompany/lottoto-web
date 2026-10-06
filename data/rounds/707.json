@@ -1,0 +1,49 @@
+{
+ "round": 707,
+ "drawDate": "2016-06-18",
+ "numbers": [
+  2,
+  12,
+  19,
+  24,
+  39,
+  44
+ ],
+ "bonus": 35,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 12,
+   "amount": 1322167313,
+   "total": 15866007756
+  },
+  {
+   "rank": 2,
+   "winners": 74,
+   "amount": 35734252,
+   "total": 2644334648
+  },
+  {
+   "rank": 3,
+   "winners": 2006,
+   "amount": 1318213,
+   "total": 2644335278
+  },
+  {
+   "rank": 4,
+   "winners": 94281,
+   "amount": 50000,
+   "total": 4714050000
+  },
+  {
+   "rank": 5,
+   "winners": 1507647,
+   "amount": 5000,
+   "total": 7538235000
+  }
+ ],
+ "totalSales": 66813924000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:22:11+0900"
+}

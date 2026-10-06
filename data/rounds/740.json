@@ -1,0 +1,49 @@
+{
+ "round": 740,
+ "drawDate": "2017-02-04",
+ "numbers": [
+  4,
+  8,
+  9,
+  16,
+  17,
+  19
+ ],
+ "bonus": 31,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 18,
+   "amount": 936929792,
+   "total": 16864736256
+  },
+  {
+   "rank": 2,
+   "winners": 43,
+   "amount": 65367195,
+   "total": 2810789385
+  },
+  {
+   "rank": 3,
+   "winners": 2447,
+   "amount": 1148668,
+   "total": 2810790596
+  },
+  {
+   "rank": 4,
+   "winners": 115722,
+   "amount": 50000,
+   "total": 5786100000
+  },
+  {
+   "rank": 5,
+   "winners": 1864169,
+   "amount": 5000,
+   "total": 9320845000
+  }
+ ],
+ "totalSales": 75186520000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:16:05+0900"
+}

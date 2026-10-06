@@ -1,0 +1,49 @@
+{
+ "round": 671,
+ "drawDate": "2015-10-10",
+ "numbers": [
+  7,
+  9,
+  10,
+  13,
+  31,
+  35
+ ],
+ "bonus": 24,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 4,
+   "amount": 3722322844,
+   "total": 14889291376
+  },
+  {
+   "rank": 2,
+   "winners": 48,
+   "amount": 51698929,
+   "total": 2481548592
+  },
+  {
+   "rank": 3,
+   "winners": 1778,
+   "amount": 1395697,
+   "total": 2481549266
+  },
+  {
+   "rank": 4,
+   "winners": 90364,
+   "amount": 50000,
+   "total": 4518200000
+  },
+  {
+   "rank": 5,
+   "winners": 1519963,
+   "amount": 5000,
+   "total": 7599815000
+  }
+ ],
+ "totalSales": 63940807000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:23:24+0900"
+}

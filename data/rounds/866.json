@@ -1,0 +1,49 @@
+{
+ "round": 866,
+ "drawDate": "2019-07-06",
+ "numbers": [
+  9,
+  15,
+  29,
+  34,
+  37,
+  39
+ ],
+ "bonus": 12,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 9,
+   "amount": 2240409000,
+   "total": 20163681000
+  },
+  {
+   "rank": 2,
+   "winners": 68,
+   "amount": 49420787,
+   "total": 3360613516
+  },
+  {
+   "rank": 3,
+   "winners": 2035,
+   "amount": 1651408,
+   "total": 3360615280
+  },
+  {
+   "rank": 4,
+   "winners": 104919,
+   "amount": 50000,
+   "total": 5245950000
+  },
+  {
+   "rank": 5,
+   "winners": 1770017,
+   "amount": 5000,
+   "total": 8850085000
+  }
+ ],
+ "totalSales": 81961886000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:06:44+0900"
+}

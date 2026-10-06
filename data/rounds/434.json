@@ -1,0 +1,49 @@
+{
+ "round": 434,
+ "drawDate": "2011-03-26",
+ "numbers": [
+  3,
+  13,
+  20,
+  24,
+  33,
+  37
+ ],
+ "bonus": 35,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 8,
+   "amount": 1480060266,
+   "total": 11840482125
+  },
+  {
+   "rank": 2,
+   "winners": 37,
+   "amount": 53335506,
+   "total": 1973413688
+  },
+  {
+   "rank": 3,
+   "winners": 1867,
+   "amount": 1056998,
+   "total": 1973413688
+  },
+  {
+   "rank": 4,
+   "winners": 78263,
+   "amount": 50000,
+   "total": 3913150000
+  },
+  {
+   "rank": 5,
+   "winners": 1217852,
+   "amount": 5000,
+   "total": 6089260000
+  }
+ ],
+ "totalSales": 51579439000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:41:28+0900"
+}

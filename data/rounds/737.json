@@ -1,0 +1,49 @@
+{
+ "round": 737,
+ "drawDate": "2017-01-14",
+ "numbers": [
+  13,
+  15,
+  18,
+  24,
+  27,
+  41
+ ],
+ "bonus": 11,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 4,
+   "amount": 4283061000,
+   "total": 17132244000
+  },
+  {
+   "rank": 2,
+   "winners": 48,
+   "amount": 59486959,
+   "total": 2855374032
+  },
+  {
+   "rank": 3,
+   "winners": 1937,
+   "amount": 1474122,
+   "total": 2855374314
+  },
+  {
+   "rank": 4,
+   "winners": 94183,
+   "amount": 50000,
+   "total": 4709150000
+  },
+  {
+   "rank": 5,
+   "winners": 1567166,
+   "amount": 5000,
+   "total": 7835830000
+  }
+ ],
+ "totalSales": 70775944000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:16:11+0900"
+}

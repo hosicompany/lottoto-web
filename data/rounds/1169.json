@@ -1,0 +1,49 @@
+{
+ "round": 1169,
+ "drawDate": "2025-04-26",
+ "numbers": [
+  5,
+  12,
+  24,
+  26,
+  39,
+  42
+ ],
+ "bonus": 20,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 10,
+   "amount": 2852735813,
+   "total": 28527358130
+  },
+  {
+   "rank": 2,
+   "winners": 112,
+   "amount": 42451426,
+   "total": 4754559712
+  },
+  {
+   "rank": 3,
+   "winners": 3244,
+   "amount": 1465648,
+   "total": 4754562112
+  },
+  {
+   "rank": 4,
+   "winners": 160483,
+   "amount": 50000,
+   "total": 8024150000
+  },
+  {
+   "rank": 5,
+   "winners": 2668194,
+   "amount": 5000,
+   "total": 13340970000
+  }
+ ],
+ "totalSales": 118803195000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T13:39:33+0900"
+}

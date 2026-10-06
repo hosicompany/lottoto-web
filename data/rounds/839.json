@@ -1,0 +1,49 @@
+{
+ "round": 839,
+ "drawDate": "2018-12-29",
+ "numbers": [
+  3,
+  9,
+  11,
+  12,
+  13,
+  19
+ ],
+ "bonus": 35,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 13,
+   "amount": 1359454904,
+   "total": 17672913752
+  },
+  {
+   "rank": 2,
+   "winners": 48,
+   "amount": 61364284,
+   "total": 2945485632
+  },
+  {
+   "rank": 3,
+   "winners": 2664,
+   "amount": 1105663,
+   "total": 2945486232
+  },
+  {
+   "rank": 4,
+   "winners": 126227,
+   "amount": 50000,
+   "total": 6311350000
+  },
+  {
+   "rank": 5,
+   "winners": 1946924,
+   "amount": 5000,
+   "total": 9734620000
+  }
+ ],
+ "totalSales": 79219710000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:12:39+0900"
+}

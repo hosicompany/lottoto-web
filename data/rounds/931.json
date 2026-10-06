@@ -1,0 +1,49 @@
+{
+ "round": 931,
+ "drawDate": "2020-10-03",
+ "numbers": [
+  14,
+  15,
+  23,
+  25,
+  35,
+  43
+ ],
+ "bonus": 32,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 8,
+   "amount": 2957108063,
+   "total": 23656864504
+  },
+  {
+   "rank": 2,
+   "winners": 54,
+   "amount": 73015014,
+   "total": 3942810756
+  },
+  {
+   "rank": 3,
+   "winners": 2596,
+   "amount": 1518803,
+   "total": 3942812588
+  },
+  {
+   "rank": 4,
+   "winners": 121943,
+   "amount": 50000,
+   "total": 6097150000
+  },
+  {
+   "rank": 5,
+   "winners": 2041653,
+   "amount": 5000,
+   "total": 10208265000
+  }
+ ],
+ "totalSales": 95695802000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:04:32+0900"
+}

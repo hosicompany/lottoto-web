@@ -1,0 +1,49 @@
+{
+ "round": 156,
+ "drawDate": "2005-11-26",
+ "numbers": [
+  5,
+  18,
+  28,
+  30,
+  42,
+  45
+ ],
+ "bonus": 2,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 8,
+   "amount": 1401099900,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 30,
+   "amount": 62271107,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 1230,
+   "amount": 1518808,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 59506,
+   "amount": 62789,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 998192,
+   "amount": 5000,
+   "total": 0
+  }
+ ],
+ "totalSales": 47344584000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:01:05+0900"
+}

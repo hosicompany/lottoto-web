@@ -1,0 +1,49 @@
+{
+ "round": 717,
+ "drawDate": "2016-08-27",
+ "numbers": [
+  2,
+  11,
+  19,
+  25,
+  28,
+  32
+ ],
+ "bonus": 44,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 2702433688,
+   "total": 16214602128
+  },
+  {
+   "rank": 2,
+   "winners": 47,
+   "amount": 57498590,
+   "total": 2702433730
+  },
+  {
+   "rank": 3,
+   "winners": 1974,
+   "amount": 1369015,
+   "total": 2702435610
+  },
+  {
+   "rank": 4,
+   "winners": 96836,
+   "amount": 50000,
+   "total": 4841800000
+  },
+  {
+   "rank": 5,
+   "winners": 1567530,
+   "amount": 5000,
+   "total": 7837650000
+  }
+ ],
+ "totalSales": 68597839000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:21:52+0900"
+}

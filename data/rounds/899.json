@@ -1,0 +1,49 @@
+{
+ "round": 899,
+ "drawDate": "2020-02-22",
+ "numbers": [
+  8,
+  19,
+  20,
+  21,
+  33,
+  39
+ ],
+ "bonus": 37,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 3359356063,
+   "total": 20156136378
+  },
+  {
+   "rank": 2,
+   "winners": 53,
+   "amount": 63384077,
+   "total": 3359356081
+  },
+  {
+   "rank": 3,
+   "winners": 2402,
+   "amount": 1398567,
+   "total": 3359357934
+  },
+  {
+   "rank": 4,
+   "winners": 121900,
+   "amount": 50000,
+   "total": 6095000000
+  },
+  {
+   "rank": 5,
+   "winners": 1993765,
+   "amount": 5000,
+   "total": 9968825000
+  }
+ ],
+ "totalSales": 85877347000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:05:36+0900"
+}

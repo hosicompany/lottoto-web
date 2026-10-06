@@ -1,0 +1,49 @@
+{
+ "round": 889,
+ "drawDate": "2019-12-14",
+ "numbers": [
+  3,
+  13,
+  29,
+  38,
+  39,
+  42
+ ],
+ "bonus": 26,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 10,
+   "amount": 2108986950,
+   "total": 21089869500
+  },
+  {
+   "rank": 2,
+   "winners": 60,
+   "amount": 58582971,
+   "total": 3514978260
+  },
+  {
+   "rank": 3,
+   "winners": 2338,
+   "amount": 1503413,
+   "total": 3514979594
+  },
+  {
+   "rank": 4,
+   "winners": 114198,
+   "amount": 50000,
+   "total": 5709900000
+  },
+  {
+   "rank": 5,
+   "winners": 1907477,
+   "amount": 5000,
+   "total": 9537385000
+  }
+ ],
+ "totalSales": 86734222000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:05:58+0900"
+}

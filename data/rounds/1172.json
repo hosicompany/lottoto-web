@@ -1,0 +1,49 @@
+{
+ "round": 1172,
+ "drawDate": "2025-05-17",
+ "numbers": [
+  7,
+  9,
+  24,
+  40,
+  42,
+  44
+ ],
+ "bonus": 45,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 13,
+   "amount": 2203004452,
+   "total": 28639057876
+  },
+  {
+   "rank": 2,
+   "winners": 98,
+   "amount": 48705881,
+   "total": 4773176338
+  },
+  {
+   "rank": 3,
+   "winners": 3059,
+   "amount": 1560372,
+   "total": 4773177948
+  },
+  {
+   "rank": 4,
+   "winners": 152897,
+   "amount": 50000,
+   "total": 7644850000
+  },
+  {
+   "rank": 5,
+   "winners": 2590472,
+   "amount": 5000,
+   "total": 12952360000
+  }
+ ],
+ "totalSales": 117565241000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T13:39:26+0900"
+}

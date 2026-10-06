@@ -1,0 +1,49 @@
+{
+ "round": 996,
+ "drawDate": "2022-01-01",
+ "numbers": [
+  6,
+  11,
+  15,
+  24,
+  32,
+  39
+ ],
+ "bonus": 28,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 18,
+   "amount": 1491185771,
+   "total": 26841343878
+  },
+  {
+   "rank": 2,
+   "winners": 86,
+   "amount": 52018109,
+   "total": 4473557374
+  },
+  {
+   "rank": 3,
+   "winners": 3313,
+   "amount": 1350305,
+   "total": 4473560465
+  },
+  {
+   "rank": 4,
+   "winners": 155856,
+   "amount": 50000,
+   "total": 7792800000
+  },
+  {
+   "rank": 5,
+   "winners": 2546181,
+   "amount": 5000,
+   "total": 12730905000
+  }
+ ],
+ "totalSales": 112624327000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T15:57:18+0900"
+}

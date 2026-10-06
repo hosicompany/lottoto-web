@@ -1,0 +1,49 @@
+{
+ "round": 222,
+ "drawDate": "2007-03-03",
+ "numbers": [
+  5,
+  7,
+  28,
+  29,
+  39,
+  43
+ ],
+ "bonus": 44,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 5,
+   "amount": 2275193820,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 33,
+   "amount": 57454390,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 1105,
+   "amount": 1715833,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 57093,
+   "amount": 66418,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 981530,
+   "amount": 5000,
+   "total": 0
+  }
+ ],
+ "totalSales": 47735197000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:58:48+0900"
+}

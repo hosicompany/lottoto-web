@@ -1,0 +1,49 @@
+{
+ "round": 1139,
+ "drawDate": "2024-09-28",
+ "numbers": [
+  5,
+  12,
+  15,
+  30,
+  37,
+  40
+ ],
+ "bonus": 18,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 13,
+   "amount": 2167490972,
+   "total": 28177382636
+  },
+  {
+   "rank": 2,
+   "winners": 75,
+   "amount": 62616406,
+   "total": 4696230450
+  },
+  {
+   "rank": 3,
+   "winners": 3240,
+   "amount": 1449454,
+   "total": 4696230960
+  },
+  {
+   "rank": 4,
+   "winners": 163236,
+   "amount": 50000,
+   "total": 8161800000
+  },
+  {
+   "rank": 5,
+   "winners": 2645260,
+   "amount": 5000,
+   "total": 13226300000
+  }
+ ],
+ "totalSales": 117915887000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T13:40:51+0900"
+}

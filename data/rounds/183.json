@@ -1,0 +1,49 @@
+{
+ "round": 183,
+ "drawDate": "2006-06-03",
+ "numbers": [
+  2,
+  18,
+  24,
+  34,
+  40,
+  42
+ ],
+ "bonus": 5,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 1777221500,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 25,
+   "amount": 71088860,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 1294,
+   "amount": 1373433,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 67137,
+   "amount": 52944,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 1039403,
+   "amount": 5000,
+   "total": 0
+  }
+ ],
+ "totalSales": 45938460000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:00:08+0900"
+}

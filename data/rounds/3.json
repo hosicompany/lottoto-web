@@ -1,0 +1,49 @@
+{
+ "round": 3,
+ "drawDate": "2002-12-21",
+ "numbers": [
+  11,
+  16,
+  19,
+  21,
+  27,
+  31
+ ],
+ "bonus": 30,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 1,
+   "amount": 2000000000,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 0,
+   "amount": 0,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 139,
+   "amount": 1174100,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 5940,
+   "amount": 54900,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 73256,
+   "amount": 10000,
+   "total": 0
+  }
+ ],
+ "totalSales": 4729342000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:11:22+0900"
+}

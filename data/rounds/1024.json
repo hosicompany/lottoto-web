@@ -1,0 +1,49 @@
+{
+ "round": 1024,
+ "drawDate": "2022-07-16",
+ "numbers": [
+  9,
+  18,
+  20,
+  22,
+  38,
+  44
+ ],
+ "bonus": 10,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 8,
+   "amount": 3020323500,
+   "total": 24162588000
+  },
+  {
+   "rank": 2,
+   "winners": 63,
+   "amount": 63922191,
+   "total": 4027098033
+  },
+  {
+   "rank": 3,
+   "winners": 2616,
+   "amount": 1539411,
+   "total": 4027099176
+  },
+  {
+   "rank": 4,
+   "winners": 134065,
+   "amount": 50000,
+   "total": 6703250000
+  },
+  {
+   "rank": 5,
+   "winners": 2224097,
+   "amount": 5000,
+   "total": 11120485000
+  }
+ ],
+ "totalSales": 100081038000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T15:56:21+0900"
+}

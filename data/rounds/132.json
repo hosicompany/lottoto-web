@@ -1,0 +1,49 @@
+{
+ "round": 132,
+ "drawDate": "2005-06-11",
+ "numbers": [
+  3,
+  17,
+  23,
+  34,
+  41,
+  45
+ ],
+ "bonus": 43,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 4,
+   "amount": 2920473525,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 34,
+   "amount": 57264187,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 1382,
+   "amount": 1408816,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 65277,
+   "amount": 59653,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 1098225,
+   "amount": 5000,
+   "total": 0
+  }
+ ],
+ "totalSales": 49921897000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:01:55+0900"
+}

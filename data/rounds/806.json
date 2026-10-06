@@ -1,0 +1,49 @@
+{
+ "round": 806,
+ "drawDate": "2018-05-12",
+ "numbers": [
+  14,
+  20,
+  23,
+  31,
+  37,
+  38
+ ],
+ "bonus": 27,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 7,
+   "amount": 2640760875,
+   "total": 18485326125
+  },
+  {
+   "rank": 2,
+   "winners": 57,
+   "amount": 54050662,
+   "total": 3080887734
+  },
+  {
+   "rank": 3,
+   "winners": 1850,
+   "amount": 1665345,
+   "total": 3080888250
+  },
+  {
+   "rank": 4,
+   "winners": 91180,
+   "amount": 50000,
+   "total": 4559000000
+  },
+  {
+   "rank": 5,
+   "winners": 1561838,
+   "amount": 5000,
+   "total": 7809190000
+  }
+ ],
+ "totalSales": 74030583000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:13:47+0900"
+}

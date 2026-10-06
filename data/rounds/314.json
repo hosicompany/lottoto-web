@@ -1,0 +1,49 @@
+{
+ "round": 314,
+ "drawDate": "2008-12-06",
+ "numbers": [
+  15,
+  17,
+  19,
+  34,
+  38,
+  41
+ ],
+ "bonus": 2,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 1660512200,
+   "total": 9963073200
+  },
+  {
+   "rank": 2,
+   "winners": 24,
+   "amount": 69188009,
+   "total": 1660512200
+  },
+  {
+   "rank": 3,
+   "winners": 1067,
+   "amount": 1556244,
+   "total": 1660512200
+  },
+  {
+   "rank": 4,
+   "winners": 54892,
+   "amount": 60502,
+   "total": 3321024400
+  },
+  {
+   "rank": 5,
+   "winners": 911785,
+   "amount": 5000,
+   "total": 4558925000
+  }
+ ],
+ "totalSales": 42328094000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:50:29+0900"
+}

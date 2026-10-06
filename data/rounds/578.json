@@ -1,0 +1,49 @@
+{
+ "round": 578,
+ "drawDate": "2013-12-28",
+ "numbers": [
+  5,
+  12,
+  14,
+  32,
+  34,
+  42
+ ],
+ "bonus": 16,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 5,
+   "amount": 2796466575,
+   "total": 13982332875
+  },
+  {
+   "rank": 2,
+   "winners": 43,
+   "amount": 54195089,
+   "total": 2330388827
+  },
+  {
+   "rank": 3,
+   "winners": 1615,
+   "amount": 1442966,
+   "total": 2330390090
+  },
+  {
+   "rank": 4,
+   "winners": 80303,
+   "amount": 50000,
+   "total": 4015150000
+  },
+  {
+   "rank": 5,
+   "winners": 1326822,
+   "amount": 5000,
+   "total": 6634110000
+  }
+ ],
+ "totalSales": 58584741000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:31:33+0900"
+}

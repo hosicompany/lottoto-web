@@ -1,0 +1,49 @@
+{
+ "round": 926,
+ "drawDate": "2020-08-29",
+ "numbers": [
+  10,
+  16,
+  18,
+  20,
+  25,
+  31
+ ],
+ "bonus": 6,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 10,
+   "amount": 2032490663,
+   "total": 20324906630
+  },
+  {
+   "rank": 2,
+   "winners": 72,
+   "amount": 47048395,
+   "total": 3387484440
+  },
+  {
+   "rank": 3,
+   "winners": 2923,
+   "amount": 1158907,
+   "total": 3387485161
+  },
+  {
+   "rank": 4,
+   "winners": 133167,
+   "amount": 50000,
+   "total": 6658350000
+  },
+  {
+   "rank": 5,
+   "winners": 2085580,
+   "amount": 5000,
+   "total": 10427900000
+  }
+ ],
+ "totalSales": 88372251000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:04:42+0900"
+}

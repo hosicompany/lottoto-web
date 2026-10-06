@@ -1,0 +1,49 @@
+{
+ "round": 1111,
+ "drawDate": "2024-03-16",
+ "numbers": [
+  3,
+  13,
+  30,
+  33,
+  43,
+  45
+ ],
+ "bonus": 4,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 16,
+   "amount": 1714662540,
+   "total": 27434600640
+  },
+  {
+   "rank": 2,
+   "winners": 97,
+   "amount": 47138490,
+   "total": 4572433530
+  },
+  {
+   "rank": 3,
+   "winners": 5096,
+   "amount": 897260,
+   "total": 4572436960
+  },
+  {
+   "rank": 4,
+   "winners": 171363,
+   "amount": 50000,
+   "total": 8568150000
+  },
+  {
+   "rank": 5,
+   "winners": 2608760,
+   "amount": 5000,
+   "total": 13043800000
+  }
+ ],
+ "totalSales": 116382835000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T13:42:04+0900"
+}

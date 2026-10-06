@@ -1,0 +1,49 @@
+{
+ "round": 362,
+ "drawDate": "2009-11-07",
+ "numbers": [
+  2,
+  3,
+  22,
+  27,
+  30,
+  40
+ ],
+ "bonus": 29,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 1729424650,
+   "total": 10376547900
+  },
+  {
+   "rank": 2,
+   "winners": 26,
+   "amount": 66516333,
+   "total": 1729424650
+  },
+  {
+   "rank": 3,
+   "winners": 1173,
+   "amount": 1474361,
+   "total": 1729424650
+  },
+  {
+   "rank": 4,
+   "winners": 56798,
+   "amount": 60898,
+   "total": 3458849300
+  },
+  {
+   "rank": 5,
+   "winners": 974787,
+   "amount": 5000,
+   "total": 4873935000
+  }
+ ],
+ "totalSales": 44336363000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:48:53+0900"
+}

@@ -1,0 +1,49 @@
+{
+ "round": 831,
+ "drawDate": "2018-11-03",
+ "numbers": [
+  3,
+  10,
+  16,
+  19,
+  31,
+  39
+ ],
+ "bonus": 9,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 16,
+   "amount": 1110702258,
+   "total": 17771236128
+  },
+  {
+   "rank": 2,
+   "winners": 61,
+   "amount": 48555290,
+   "total": 2961872690
+  },
+  {
+   "rank": 3,
+   "winners": 2660,
+   "amount": 1113486,
+   "total": 2961872760
+  },
+  {
+   "rank": 4,
+   "winners": 117332,
+   "amount": 50000,
+   "total": 5866600000
+  },
+  {
+   "rank": 5,
+   "winners": 1849959,
+   "amount": 5000,
+   "total": 9249795000
+  }
+ ],
+ "totalSales": 77622753000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:12:56+0900"
+}

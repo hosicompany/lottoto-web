@@ -1,0 +1,49 @@
+{
+ "round": 97,
+ "drawDate": "2004-10-09",
+ "numbers": [
+  6,
+  7,
+  14,
+  15,
+  20,
+  36
+ ],
+ "bonus": 3,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 9,
+   "amount": 1496214000,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 46,
+   "amount": 48789587,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 1543,
+   "amount": 1454518,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 77227,
+   "amount": 58123,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 1282678,
+   "amount": 5000,
+   "total": 0
+  }
+ ],
+ "totalSales": 57713200000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:08:09+0900"
+}

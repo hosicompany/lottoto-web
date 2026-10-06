@@ -1,0 +1,49 @@
+{
+ "round": 484,
+ "drawDate": "2012-03-10",
+ "numbers": [
+  1,
+  3,
+  27,
+  28,
+  32,
+  45
+ ],
+ "bonus": 11,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 2305303063,
+   "total": 13831818375
+  },
+  {
+   "rank": 2,
+   "winners": 32,
+   "amount": 72040721,
+   "total": 2305303063
+  },
+  {
+   "rank": 3,
+   "winners": 1343,
+   "amount": 1716533,
+   "total": 2305303063
+  },
+  {
+   "rank": 4,
+   "winners": 70285,
+   "amount": 50000,
+   "total": 3514250000
+  },
+  {
+   "rank": 5,
+   "winners": 1197263,
+   "amount": 5000,
+   "total": 5986315000
+  }
+ ],
+ "totalSales": 55885979000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:34:45+0900"
+}

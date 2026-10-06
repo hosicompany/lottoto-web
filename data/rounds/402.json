@@ -1,0 +1,49 @@
+{
+ "round": 402,
+ "drawDate": "2010-08-14",
+ "numbers": [
+  5,
+  9,
+  15,
+  19,
+  22,
+  36
+ ],
+ "bonus": 32,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 4,
+   "amount": 2662206188,
+   "total": 10648824750
+  },
+  {
+   "rank": 2,
+   "winners": 41,
+   "amount": 43287906,
+   "total": 1774804125
+  },
+  {
+   "rank": 3,
+   "winners": 1271,
+   "amount": 1396385,
+   "total": 1774804125
+  },
+  {
+   "rank": 4,
+   "winners": 62656,
+   "amount": 50000,
+   "total": 3132800000
+  },
+  {
+   "rank": 5,
+   "winners": 1034048,
+   "amount": 5000,
+   "total": 5170240000
+  }
+ ],
+ "totalSales": 45002946000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:42:34+0900"
+}

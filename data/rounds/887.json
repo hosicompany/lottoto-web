@@ -1,0 +1,49 @@
+{
+ "round": 887,
+ "drawDate": "2019-11-30",
+ "numbers": [
+  8,
+  14,
+  17,
+  27,
+  36,
+  45
+ ],
+ "bonus": 10,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 8,
+   "amount": 2535268688,
+   "total": 20282149504
+  },
+  {
+   "rank": 2,
+   "winners": 66,
+   "amount": 51217550,
+   "total": 3380358300
+  },
+  {
+   "rank": 3,
+   "winners": 2388,
+   "amount": 1415561,
+   "total": 3380359668
+  },
+  {
+   "rank": 4,
+   "winners": 114719,
+   "amount": 50000,
+   "total": 5735950000
+  },
+  {
+   "rank": 5,
+   "winners": 1885924,
+   "amount": 5000,
+   "total": 9429620000
+  }
+ ],
+ "totalSales": 84416872000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:06:01+0900"
+}

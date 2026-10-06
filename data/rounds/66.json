@@ -1,0 +1,49 @@
+{
+ "round": 66,
+ "drawDate": "2004-03-06",
+ "numbers": [
+  2,
+  3,
+  7,
+  17,
+  22,
+  24
+ ],
+ "bonus": 45,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 4,
+   "amount": 3685138200,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 19,
+   "amount": 129303000,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 786,
+   "amount": 3125600,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 40188,
+   "amount": 122200,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 712181,
+   "amount": 10000,
+   "total": 0
+  }
+ ],
+ "totalSales": 63378796000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T17:09:11+0900"
+}

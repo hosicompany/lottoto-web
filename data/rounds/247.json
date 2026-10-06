@@ -1,0 +1,49 @@
+{
+ "round": 247,
+ "drawDate": "2007-08-25",
+ "numbers": [
+  12,
+  15,
+  28,
+  36,
+  39,
+  40
+ ],
+ "bonus": 13,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 6,
+   "amount": 1669313900,
+   "total": 0
+  },
+  {
+   "rank": 2,
+   "winners": 29,
+   "amount": 57562549,
+   "total": 0
+  },
+  {
+   "rank": 3,
+   "winners": 1019,
+   "amount": 1638189,
+   "total": 0
+  },
+  {
+   "rank": 4,
+   "winners": 52284,
+   "amount": 63856,
+   "total": 0
+  },
+  {
+   "rank": 5,
+   "winners": 884542,
+   "amount": 5000,
+   "total": 0
+  }
+ ],
+ "totalSales": 42231698000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:52:57+0900"
+}

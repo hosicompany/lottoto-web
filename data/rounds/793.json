@@ -1,0 +1,49 @@
+{
+ "round": 793,
+ "drawDate": "2018-02-10",
+ "numbers": [
+  10,
+  15,
+  21,
+  35,
+  38,
+  43
+ ],
+ "bonus": 31,
+ "prizes": [
+  {
+   "rank": 1,
+   "winners": 5,
+   "amount": 3750146775,
+   "total": 18750733875
+  },
+  {
+   "rank": 2,
+   "winners": 61,
+   "amount": 51231514,
+   "total": 3125122354
+  },
+  {
+   "rank": 3,
+   "winners": 2043,
+   "amount": 1529674,
+   "total": 3125123982
+  },
+  {
+   "rank": 4,
+   "winners": 98216,
+   "amount": 50000,
+   "total": 4910800000
+  },
+  {
+   "rank": 5,
+   "winners": 1635392,
+   "amount": 5000,
+   "total": 8176960000
+  }
+ ],
+ "totalSales": 76177477000,
+ "winners1": [],
+ "winners2": [],
+ "fetchedAt": "2026-10-06T16:14:14+0900"
+}
