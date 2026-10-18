@@ -6,7 +6,7 @@ import AdSlot from '../components/AdSlot.astro';
 import { rounds, latest } from '../lib/data';
 
 const title = '내 로또 번호 역대 당첨 확인 — 1회부터 전체 회차';
-const description = `번호 6개를 입력하면 1회부터 ${latest.round}회까지 전체 회차와 대조해 역대 성적을 확인합니다. 당첨 예측이 아니며, 입력한 번호는 서버로 전송되지 않습니다.`;
+const description = `번호 6개를 입력하면 1회부터 ${latest.round}회까지 전체 회차와 대조해 역대 성적을 확인합니다. 지난 결과는 다음 결과와 무관하며, 입력한 번호는 서버로 전송되지 않습니다.`;
 
 // 클라이언트 대조용 압축 배열: [회차, 추첨일, 번호1~6, 보너스] 만 남겨 18MB 원본 대신 수십 KB 로 내장한다.
 const compact = rounds.map((r) => [r.round, r.drawDate, ...r.numbers, r.bonus]);
