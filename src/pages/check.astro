@@ -1,0 +1,227 @@
+---
+// 번호 6개를 1회부터 전체 회차까지 전부 대조한다. 입력·대조는 전부 브라우저 JS — 서버로 보내지 않는다.
+// 공유 링크(?n=3,11,19,27,35,44)도 같은 원칙: URL 에 담긴 숫자를 클라이언트가 읽어 계산할 뿐, 서버로 전송하지 않는다.
+import Base from '../layouts/Base.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { rounds, latest } from '../lib/data';
+
+const title = '내 로또 번호 역대 당첨 확인 — 1회부터 전체 회차';
+const description = `번호 6개를 입력하면 1회부터 ${latest.round}회까지 전체 회차와 대조해 역대 성적을 확인합니다. 당첨 예측이 아니며, 입력한 번호는 서버로 전송되지 않습니다.`;
+
+// 클라이언트 대조용 압축 배열: [회차, 추첨일, 번호1~6, 보너스] 만 남겨 18MB 원본 대신 수십 KB 로 내장한다.
+const compact = rounds.map((r) => [r.round, r.drawDate, ...r.numbers, r.bonus]);
+---
+
+<Base title={title} description={description} path="/check" nav="check">
+  <div class="layout">
+    <div class="main">
+      <section class="card hero" style="margin-top:12px">
+        <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>내 번호 확인</b></nav>
+        <h1>{title}</h1>
+        <p class="date">번호 6개를 입력하면 1회부터 {latest.round}회까지 전부 대조합니다</p>
+        <form id="check-form">
+          <div class="inputs">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <input type="number" inputmode="numeric" min="1" max="45" required aria-label={`번호 ${i + 1}`} />
+            ))}
+          </div>
+          <p class="assist" style="font-size:12px;margin-top:8px">1~45 중 서로 다른 번호 6개</p>
+          <button class="btn btn-primary" type="submit" style="width:100%;margin-top:12px">전체 회차 대조하기</button>
+          <p class="check-result" id="validation" role="status" aria-live="polite"></p>
+        </form>
+        <div class="actions" style="margin-top:12px">
+          <button class="btn btn-soft" type="button" id="copy-link" hidden>결과 링크 복사</button>
+        </div>
+        <p class="assist" style="font-size:11px;margin-top:10px">입력한 번호는 저장되지 않으며 서버로 전송되지 않습니다.</p>
+      </section>
+
+      <AdSlot />
+
+      <section class="card" id="result" hidden></section>
+
+      <noscript>
+        <section class="card">
+          <p class="muted">이 기능은 자바스크립트가 필요합니다. 브라우저에서 자바스크립트를 켜 주세요.</p>
+        </section>
+      </noscript>
+    </div>
+
+    <aside class="side desktop-only">
+      <AdSlot side />
+    </aside>
+  </div>
+
+  <script type="application/json" id="rounds-data" set:html={JSON.stringify(compact)} />
+</Base>
+
+<style>
+  .desktop-only { display: none; }
+  @media (min-width: 900px) {
+    .desktop-only { display: block; }
+  }
+</style>
+
+<script>
+  const dataEl = document.getElementById('rounds-data')!;
+  // [회차, 추첨일, 번호1~6, 보너스] — 최신 회차가 앞(data.ts rounds 와 동일 정렬)
+  const ROUNDS: (number | string)[][] = JSON.parse(dataEl.textContent || '[]');
+  const LATEST_ROUND = Number(ROUNDS[0]?.[0] ?? 0);
+  const OLDEST_ROUND = Number(ROUNDS[ROUNDS.length - 1]?.[0] ?? 0);
+  const TOTAL = ROUNDS.length;
+
+  const ballColor = (n: number) => (n <= 10 ? 'y' : n <= 20 ? 'b' : n <= 30 ? 'r' : n <= 40 ? 'g' : 'gr');
+  const formatShortDate = (iso: string) => iso.replaceAll('-', '.');
+  const yearMonth = (iso: string) => iso.slice(0, 7).replace('-', '.');
+
+  const RANK_LABEL: Record<number, string> = { 1: '1등', 2: '2등', 3: '3등', 4: '4등', 5: '5등' };
+
+  function matchRank(hit: number, hasBonus: boolean): number {
+    if (hit === 6) return 1;
+    if (hit === 5 && hasBonus) return 2;
+    if (hit === 5) return 3;
+    if (hit === 4) return 4;
+    if (hit === 3) return 5;
+    return 0;
+  }
+
+  const plainBalls = (nums: number[]): string =>
+    nums.map((n) => `<span class="ball sm ${ballColor(n)}">${n}</span>`).join('');
+
+  const matchedBalls = (nums: number[], matched: Set<number>): string =>
+    nums
+      .map((n) => (matched.has(n) ? `<span class="ball sm ${ballColor(n)}">${n}</span>` : `<span class="ball sm dim">${n}</span>`))
+      .join('');
+
+  interface WinRow { round: number; date: string; rank: number; numbers: number[]; bonus: number; bonusHit: boolean }
+
+  function compute(nums: number[]) {
+    const set = new Set(nums);
+    let rank4 = 0;
+    let rank5 = 0;
+    let rank123 = 0;
+    let bestHit = -1;
+    let bestRound: { round: number; date: string } | null = null;
+    const wins: WinRow[] = [];
+    for (const row of ROUNDS) {
+      const round = Number(row[0]);
+      const date = String(row[1]);
+      const numbers = (row.slice(2, 8) as number[]).map(Number);
+      const bonus = Number(row[8]);
+      const hit = numbers.filter((n) => set.has(n)).length;
+      const hasBonus = set.has(bonus);
+      // ROUNDS 가 최신순이라 처음 만난 최댓값이 가장 최신 회차 — "동률이면 최신" 이 자연히 지켜진다.
+      if (hit > bestHit) { bestHit = hit; bestRound = { round, date }; }
+      const rank = matchRank(hit, hasBonus);
+      if (rank === 4) rank4 += 1;
+      else if (rank === 5) rank5 += 1;
+      else if (rank >= 1 && rank <= 3) rank123 += 1;
+      if (rank >= 1) wins.push({ round, date, rank, numbers, bonus, bonusHit: hasBonus && rank === 2 });
+    }
+    return { rank4, rank5, rank123, bestHit, bestRound, wins };
+  }
+
+  const form = document.getElementById('check-form') as HTMLFormElement;
+  const inputs = [...form.querySelectorAll<HTMLInputElement>('input')];
+  const validation = document.getElementById('validation')!;
+  const resultSection = document.getElementById('result')!;
+  const copyBtn = document.getElementById('copy-link') as HTMLButtonElement;
+  let lastNums: number[] | null = null;
+
+  inputs.forEach((inp, i) => {
+    inp.addEventListener('input', () => {
+      if (inp.value.length >= 2 && i < 5) inputs[i + 1].focus();
+    });
+  });
+
+  function readInputs(): number[] | null {
+    const nums = inputs.map((x) => Number(x.value));
+    const uniq = new Set(nums);
+    if (nums.some((n) => !Number.isInteger(n) || n < 1 || n > 45) || uniq.size !== 6) return null;
+    return nums;
+  }
+
+  function renderResult(nums: number[]) {
+    const { rank4, rank5, rank123, bestHit, bestRound, wins } = compute(nums);
+    const sorted = [...nums].sort((a, b) => a - b);
+    const shown = wins.slice(0, 20);
+    const overflow = wins.length - shown.length;
+
+    const winsHtml = shown.length
+      ? shown
+          .map((w) => {
+            const matched = new Set(w.numbers.filter((n) => nums.includes(n)));
+            const bonusBall = w.bonusHit
+              ? `<span class="plus" aria-hidden="true">+</span><span class="ball sm ${ballColor(w.bonus)}">${w.bonus}</span>`
+              : `<span class="plus" aria-hidden="true">+</span><span class="ball sm dim">${w.bonus}</span>`;
+            return `<a class="round-row" href="/round/${w.round}" style="color:inherit">
+              <div class="no"><b>${w.round}회</b><span>${formatShortDate(w.date)}</span></div>
+              <div class="balls">${matchedBalls(w.numbers, matched)}${bonusBall}</div>
+              <span class="amt">${RANK_LABEL[w.rank]}</span>
+            </a>`;
+          })
+          .join('')
+      : '<p class="muted" style="padding:16px 0;text-align:center">3개 이상 일치한 회차가 아직 없어요.</p>';
+
+    resultSection.innerHTML = `
+      <div class="balls">${plainBalls(sorted)}</div>
+      <p class="date" style="margin-top:10px">${TOTAL}회 전부에 넣어 봤어요</p>
+      <p class="date">제${OLDEST_ROUND}회부터 제${LATEST_ROUND}회까지</p>
+      <div class="stats3">
+        <div class="stat"><div class="k">4등</div><div class="v">${rank4}회</div></div>
+        <div class="stat"><div class="k">5등</div><div class="v">${rank5}회</div></div>
+        <div class="stat"><div class="k">3등 이상</div><div class="v blue">${rank123}회</div></div>
+      </div>
+      ${bestRound ? `<div class="best"><b>가장 가까웠던 날</b> · 제${bestRound.round}회(${yearMonth(bestRound.date)}) — ${bestHit}개 일치</div>` : ''}
+      <div class="card-head" style="margin-top:20px">
+        <h2>겹친 회차 ${wins.length}회</h2>
+        <p class="sub">최신순 · 3개 이상 일치한 회차만</p>
+      </div>
+      ${winsHtml}
+      ${overflow > 0 ? `<p class="muted" style="text-align:center;padding-top:10px;font-size:13px">외 ${overflow}회</p>` : ''}
+      <p class="notice" style="margin-top:16px">지난 결과는 다음 결과와 무관해요. 어떤 조합이든 매 회차 당첨 가능성은 같아요.</p>
+      <a class="btn btn-primary" href="/app" style="width:100%;margin-top:16px;display:flex">앱에서 저장한 번호로 보기</a>
+    `;
+    resultSection.hidden = false;
+    lastNums = sorted;
+    copyBtn.hidden = false;
+    validation.className = 'check-result';
+    validation.textContent = '';
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nums = readInputs();
+    if (!nums) {
+      validation.className = 'check-result on';
+      validation.textContent = '1~45 사이의 서로 다른 번호 6개를 입력해 주세요.';
+      resultSection.hidden = true;
+      copyBtn.hidden = true;
+      return;
+    }
+    renderResult(nums);
+    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  copyBtn.addEventListener('click', async () => {
+    if (!lastNums) return;
+    const url = `${location.origin}${location.pathname}?n=${lastNums.join(',')}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      copyBtn.textContent = '복사됨';
+    } catch {
+      copyBtn.textContent = '복사 실패';
+    }
+    setTimeout(() => { copyBtn.textContent = '결과 링크 복사'; }, 1500);
+  });
+
+  // 공유 링크(?n=3,11,19,27,35,44)로 들어오면 입력칸을 채우고 바로 계산한다.
+  (function initFromQuery() {
+    const sp = new URLSearchParams(location.search);
+    const raw = sp.get('n');
+    if (!raw) return;
+    const nums = raw.split(',').map((s) => Number(s.trim()));
+    if (nums.length !== 6 || nums.some((n) => !Number.isInteger(n) || n < 1 || n > 45) || new Set(nums).size !== 6) return;
+    inputs.forEach((inp, i) => { inp.value = String(nums[i]); });
+    renderResult(nums);
+  })();
+</script>

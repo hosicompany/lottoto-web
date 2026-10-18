@@ -144,6 +144,10 @@ details.second .list { margin-top: 10px; }
 .check-result { margin-top: 12px; padding: 12px 14px; border-radius: 10px; background: var(--bg-alt); font-size: 14px; display: none; }
 .check-result.on { display: block; }
 .check-result.win { background: var(--blue-95); color: var(--blue); font-weight: 700; }
+.stats3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+.ball.dim { background: var(--bg-alt); color: var(--assist); }
+.best { background: var(--blue-95); color: var(--blue); border-radius: 10px; padding: 14px 16px; margin-top: 16px; font-size: 14px; font-weight: 500; }
+.best b { font-weight: 700; }
 
 /* app banner */
 .app-banner { display: flex; align-items: center; gap: 14px; background: var(--blue); color: #fff; border-radius: var(--radius); padding: 18px 20px; margin-top: 12px; }
