@@ -6,7 +6,7 @@ interface Props {
   title: string;
   description: string;
   path: string; // '/' 또는 '/round/1244'
-  nav?: 'rounds' | 'all' | 'shops' | 'generate';
+  nav?: 'rounds' | 'check' | 'all' | 'shops' | 'generate';
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 const { title, description, path, nav, jsonLd } = Astro.props;
@@ -15,6 +15,7 @@ const canonical = `${site}${path === '/' ? '' : path}`;
 const fullTitle = path === '/' ? title : `${title} | 로또또`;
 const navItems = [
   { key: 'rounds', href: `/round/${latest.round}`, label: '회차별 당첨번호' },
+  { key: 'check', href: '/check', label: '내 번호 확인' },
   { key: 'all', href: '/all', label: '전체 회차' },
   { key: 'shops', href: '/shops', label: '1등 배출점' },
   { key: 'generate', href: '/generate', label: '번호 생성기' },

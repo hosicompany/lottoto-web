@@ -8,6 +8,7 @@ export const GET: APIRoute = ({ site }) => {
   const today = latest.drawDate;
   const items = [
     url('', today, '1.0'),
+    url('/check', today, '0.8'),
     url('/all', today, '0.8'),
     url('/shops', today, '0.8'),
     url('/generate', today, '0.5'),
