@@ -9,7 +9,7 @@
 ## 1. 구조
 - `scripts/fetch_rounds.py` — 수집(표준 라이브러리만). `data/rounds/<회차>.json` 이 정본, 스키마는 `normalize()`.
 - `src/lib/data.ts` — JSON 을 `import.meta.glob` 으로 읽어 페이지에 공급. 포맷·집계 헬퍼.
-- 페이지: `/`(최신 회차) · `/round/[n]`(핵심 유입처) · `/all`(전체 표+CSV) · `/shops`(최근 52회차 1등 배출점 누적) · `/generate` · `/app` · `/sitemap.xml` · `/data/lotto.csv`.
+- 페이지: `/`(최신 회차) · `/round/[n]`(핵심 유입처) · `/all`(전체 표+CSV) · `/shops`(최근 52회차 1등 배출점 누적) · `/check`(**내 번호 역대 당첨 확인** — 2026-10-19, 번호 6개를 브라우저 JS로 전 회차와 대조. 회차·날짜·번호·보너스만 추린 약 47KB 배열을 페이지에 내장, 결과 쿼리 `?n=3,11,19,27,35,44`로 공유. 앱의 '내 번호 타임머신'과 등수 규칙·고지 문구를 맞춘다. 고지에서도 `예측·확률·추천` 금지) · `/generate` · `/app` · `/sitemap.xml` · `/data/lotto.csv`.
 - 디자인: 앱 `lotto_theme.dart` 토큰 그대로(블루 #3366FF, Pretendard, 다크모드 없음). Figma 시안 `https://www.figma.com/design/6UFu6PAd8aVQJsAa9D1UJC`.
 - 배포: `.github/workflows/weekly.yml` — 토 21:10·일 12:00 KST 수집→커밋→빌드→GitHub Pages.
 
@@ -29,7 +29,7 @@ python3 scripts/fetch_rounds.py --latest   # 수집 동작 확인
 
 ## 4. 남은 작업(2026-10-06)
 - [ ] 도메인 결정 → `site`·robots·CNAME → GitHub Pages 커스텀 도메인
-- [ ] GitHub 레포 생성·푸시, Pages 활성화(Settings → Pages → Source: GitHub Actions)
+- [x] GitHub 레포 생성·푸시 — `hosicompany/lottoto-web` **비공개**(2026-10-19). ⚠️ 개인 계정의 GitHub Pages는 공개 레포에서만 무료다 — Pages를 켜기 전에 공개 전환 여부를 사용자가 정한다(코드·데이터에 비밀값 없음은 확인됨). Pages 활성화(Settings → Pages → Source: GitHub Actions)는 아직.
 - [ ] Search Console·네이버 서치어드바이저 등록, 사이트맵 제출
 - [ ] AdSense 신청(도메인 연결 후) → 승인 시 `Base.astro` 스크립트·`AdSlot.astro` 교체
 - [ ] GA4 웹 스트림(앱과 같은 Firebase 프로젝트에 웹 앱 추가) — 유입 경로 측정
