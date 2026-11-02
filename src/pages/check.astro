@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 // 번호 6개를 1회부터 전체 회차까지 전부 대조한다. 입력·대조는 전부 브라우저 JS — 서버로 보내지 않는다.
 // 공유 링크(?n=3,11,19,27,35,44)도 같은 원칙: URL 에 담긴 숫자를 클라이언트가 읽어 계산할 뿐, 서버로 전송하지 않는다.
 import Base from '../layouts/Base.astro';
@@ -16,7 +17,7 @@ const compact = rounds.map((r) => [r.round, r.drawDate, ...r.numbers, r.bonus]);
   <div class="layout">
     <div class="main">
       <section class="card hero" style="margin-top:12px">
-        <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>내 번호 확인</b></nav>
+        <nav class="crumbs" aria-label="현재 위치"><a href={u('/')}>홈</a><span class="sep">›</span><b>내 번호 확인</b></nav>
         <h1>{title}</h1>
         <p class="date">번호 6개를 입력하면 1회부터 {latest.round}회까지 전부 대조합니다</p>
         <form id="check-form">
@@ -62,6 +63,7 @@ const compact = rounds.map((r) => [r.round, r.drawDate, ...r.numbers, r.bonus]);
 </style>
 
 <script>
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
   const dataEl = document.getElementById('rounds-data')!;
   // [회차, 추첨일, 번호1~6, 보너스] — 최신 회차가 앞(data.ts rounds 와 동일 정렬)
   const ROUNDS: (number | string)[][] = JSON.parse(dataEl.textContent || '[]');
@@ -153,7 +155,7 @@ const compact = rounds.map((r) => [r.round, r.drawDate, ...r.numbers, r.bonus]);
             const bonusBall = w.bonusHit
               ? `<span class="plus" aria-hidden="true">+</span><span class="ball sm ${ballColor(w.bonus)}">${w.bonus}</span>`
               : `<span class="plus" aria-hidden="true">+</span><span class="ball sm dim">${w.bonus}</span>`;
-            return `<a class="round-row" href="/round/${w.round}" style="color:inherit">
+            return `<a class="round-row" href="${BASE}/round/${w.round}" style="color:inherit">
               <div class="no"><b>${w.round}회</b><span>${formatShortDate(w.date)}</span></div>
               <div class="balls">${matchedBalls(w.numbers, matched)}${bonusBall}</div>
               <span class="amt">${RANK_LABEL[w.rank]}</span>
@@ -179,7 +181,7 @@ const compact = rounds.map((r) => [r.round, r.drawDate, ...r.numbers, r.bonus]);
       ${winsHtml}
       ${overflow > 0 ? `<p class="muted" style="text-align:center;padding-top:10px;font-size:13px">외 ${overflow}회</p>` : ''}
       <p class="notice" style="margin-top:16px">지난 결과는 다음 결과와 무관해요. 어떤 조합이든 매 회차 당첨 가능성은 같아요.</p>
-      <a class="btn btn-primary" href="/app" style="width:100%;margin-top:16px;display:flex">앱에서 저장한 번호로 보기</a>
+      <a class="btn btn-primary" href="${BASE}/app" style="width:100%;margin-top:16px;display:flex">앱에서 저장한 번호로 보기</a>
     `;
     resultSection.hidden = false;
     lastNums = sorted;

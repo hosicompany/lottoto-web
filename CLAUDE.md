@@ -18,7 +18,7 @@
 - 광고는 페이지당 2자리(모바일 히어로 아래 1, 데스크톱 사이드바 1). 번호 위에 두지 않는다.
 - 사용자가 입력한 번호(맞춰보기·생성기)는 서버로 보내지 않는다 — 전부 브라우저 JS.
 - 수집은 호출 간 지터 필수(앱에서 24h 백오프를 겪은 API). HTTP 오류면 즉시 중단.
-- `site`(astro.config.mjs)·`public/robots.txt` 의 도메인은 도메인 확정 시 함께 바꾼다.
+- `site`(astro.config.mjs)·`public/robots.txt` 의 도메인은 도메인 확정 시 함께 바꾼다. 지금은 GitHub Pages 프로젝트 사이트라 `base: '/lottoto-web'` — 내부 링크는 반드시 `src/lib/url.ts` 의 `u()`(템플릿)·`BASE`(클라이언트 스크립트)로 만든다. `href="/..."` 직접 쓰기 금지.
 
 ## 3. 검증 명령
 ```bash

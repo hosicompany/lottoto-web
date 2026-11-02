@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import AdSlot from '../components/AdSlot.astro';
 import AppBanner from '../components/AppBanner.astro';
@@ -9,7 +10,7 @@ const description = '1~45 중 서로 다른 6개를 완전 무작위로 뽑습�
 
 <Base title={title} description={description} path="/generate" nav="generate">
   <section class="card hero" style="margin-top:12px">
-    <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>번호 생성기</b></nav>
+    <nav class="crumbs" aria-label="현재 위치"><a href={u('/')}>홈</a><span class="sep">›</span><b>번호 생성기</b></nav>
     <h1>{title}</h1>
     <p class="date">완전 무작위 · 당첨 확률과 무관 · 번호는 저장·전송되지 않습니다</p>
     <div id="games" style="margin-top:16px"></div>

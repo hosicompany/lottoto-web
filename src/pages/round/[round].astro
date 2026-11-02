@@ -1,4 +1,5 @@
 ---
+import { u, abs } from '../../lib/url';
 import Base from '../../layouts/Base.astro';
 import Balls from '../../components/Balls.astro';
 import PrizeTable from '../../components/PrizeTable.astro';
@@ -33,8 +34,8 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: Astro.site?.toString() },
-      { '@type': 'ListItem', position: 2, name: '회차별 당첨번호', item: `${Astro.site}round/${rounds[0].round}` },
+      { '@type': 'ListItem', position: 1, name: '홈', item: abs(Astro.site, '/') },
+      { '@type': 'ListItem', position: 2, name: '회차별 당첨번호', item: abs(Astro.site, `/round/${rounds[0].round}`) },
       { '@type': 'ListItem', position: 3, name: `${r.round}회` },
     ],
   },
@@ -46,7 +47,7 @@ const jsonLd = [
     <div class="main">
       <section class="card hero">
         <nav class="crumbs" aria-label="현재 위치">
-          <a href="/">홈</a><span class="sep">›</span><a href={`/round/${rounds[0].round}`}>회차별 당첨번호</a><span class="sep">›</span><b>{r.round}회</b>
+          <a href={u('/')}>홈</a><span class="sep">›</span><a href={u(`/round/${rounds[0].round}`)}>회차별 당첨번호</a><span class="sep">›</span><b>{r.round}회</b>
         </nav>
         <h1>{title}</h1>
         <p class="date">{formatDate(r.drawDate)} 추첨 · 동행복권 공식 결과 기준</p>
@@ -60,7 +61,7 @@ const jsonLd = [
         <div class="actions">
           <a class="btn btn-primary" href="#check">내 번호 맞춰보기</a>
           <button class="btn btn-soft" type="button" data-share data-text={`로또 ${r.round}회 당첨번호 ${r.numbers.join(' ')} + ${r.bonus}`}>공유</button>
-          <a class="btn btn-soft" href="/data/lotto.csv" download>엑셀</a>
+          <a class="btn btn-soft" href={u('/data/lotto.csv')} download>엑셀</a>
         </div>
       </section>
 
@@ -94,7 +95,7 @@ const jsonLd = [
         <section class="card">
           <div class="card-head"><h2>이전 회차</h2><p class="sub">당첨번호를 눌러 회차 페이지로 이동</p></div>
           {recent.map((x) => (
-            <a class="round-row" href={`/round/${x.round}`} style="color:inherit">
+            <a class="round-row" href={u(`/round/${x.round}`)} style="color:inherit">
               <div class="no"><b>{x.round}회</b><span>{formatShortDate(x.drawDate)}</span></div>
               <Balls numbers={x.numbers} bonus={x.bonus} size="sm" label={false} />
               <span class="amt">1등 {formatWon(x.prizes[0].amount)}</span>
@@ -104,9 +105,9 @@ const jsonLd = [
       )}
 
       <nav class="round-nav" aria-label="회차 이동">
-        {prev ? <a class="btn btn-line" href={`/round/${prev.round}`}>‹ {prev.round}회</a> : <span class="btn btn-line" aria-disabled="true">첫 회차</span>}
-        <a class="btn btn-line" href="/all">전체 회차</a>
-        {next ? <a class="btn btn-line" href={`/round/${next.round}`}>{next.round}회 ›</a> : <span class="btn btn-line" aria-disabled="true">최신 회차</span>}
+        {prev ? <a class="btn btn-line" href={u(`/round/${prev.round}`)}>‹ {prev.round}회</a> : <span class="btn btn-line" aria-disabled="true">첫 회차</span>}
+        <a class="btn btn-line" href={u('/all')}>전체 회차</a>
+        {next ? <a class="btn btn-line" href={u(`/round/${next.round}`)}>{next.round}회 ›</a> : <span class="btn btn-line" aria-disabled="true">최신 회차</span>}
       </nav>
     </div>
 
@@ -122,7 +123,7 @@ const jsonLd = [
             <div class="info"><div class="name" style="font-weight:500">{e.name}</div><div class="addr">{e.region} · {e.rounds.length}회</div></div>
           </div>
         ))}
-        <a class="more" href="/shops">랭킹 전체 보기 ›</a>
+        <a class="more" href={u('/shops')}>랭킹 전체 보기 ›</a>
       </section>
     </aside>
   </div>

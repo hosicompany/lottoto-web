@@ -1,10 +1,10 @@
 import type { APIRoute } from 'astro';
 import { rounds, latest } from '../lib/data';
+import { abs } from '../lib/url';
 
 export const GET: APIRoute = ({ site }) => {
-  const base = site?.toString().replace(/\/$/, '') ?? '';
   const url = (path: string, lastmod: string, priority: string) =>
-    `<url><loc>${base}${path}</loc><lastmod>${lastmod}</lastmod><priority>${priority}</priority></url>`;
+    `<url><loc>${abs(site, path || '/')}</loc><lastmod>${lastmod}</lastmod><priority>${priority}</priority></url>`;
   const today = latest.drawDate;
   const items = [
     url('', today, '1.0'),

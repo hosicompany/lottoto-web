@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { hallOfFame, latest, mapUrl, rounds } from '../lib/data';
@@ -17,7 +18,7 @@ const description = `최근 ${WINDOW}회차(${oldest.round}~${latest.round}회) 
 
 <Base title={title} description={description} path="/shops" nav="shops">
   <section class="card hero" style="margin-top:12px">
-    <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>1등 배출점</b></nav>
+    <nav class="crumbs" aria-label="현재 위치"><a href={u('/')}>홈</a><span class="sep">›</span><b>1등 배출점</b></nav>
     <h1>{title}</h1>
     <p class="date">{oldest.round}회 ~ {latest.round}회 · 매주 갱신</p>
     <div class="stats">
@@ -59,7 +60,7 @@ const description = `최근 ${WINDOW}회차(${oldest.round}~${latest.round}회) 
         <div class="shop">
           <div class="info">
             <div class="name">{e.name}</div>
-            <div class="addr">{e.address} · <a href={`/round/${e.rounds[0]}`}>{e.rounds[0]}회</a></div>
+            <div class="addr">{e.address} · <a href={u(`/round/${e.rounds[0]}`)}>{e.rounds[0]}회</a></div>
           </div>
         </div>
       ))}
