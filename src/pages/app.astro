@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 import Base from '../layouts/Base.astro';
 const title = '로또또 앱 — 번호 저장하면 토요일 밤 결과 알림';
 const description = '로또또 앱은 QR 스캔으로 용지를 등록하고, 토요일 추첨 직후 등수를 알려줍니다. 번호팩·주간 확인 스트릭·암호화 백업. Android는 Google Play에서 무료.';
@@ -7,7 +8,7 @@ const PLAY = 'https://play.google.com/store/apps/details?id=com.hosicompany.lott
 
 <Base title={title} description={description} path="/app">
   <section class="card hero" style="margin-top:12px">
-    <nav class="crumbs" aria-label="현재 위치"><a href="/">홈</a><span class="sep">›</span><b>앱 다운로드</b></nav>
+    <nav class="crumbs" aria-label="현재 위치"><a href={u('/')}>홈</a><span class="sep">›</span><b>앱 다운로드</b></nav>
     <h1>로또또 앱</h1>
     <p class="date">무료 · 광고 포함 · 번호는 기기에만 저장</p>
     <ul style="margin:16px 0 0;padding-left:18px;line-height:1.9;font-size:15px">

@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import Balls from '../components/Balls.astro';
 import AdSlot from '../components/AdSlot.astro';
@@ -28,7 +29,7 @@ const hof = hallOfFame(52).slice(0, 5);
           <div class="stat"><div class="k">총 판매금액</div><div class="v">{formatWon(latest.totalSales)}</div></div>
         </div>
         <div class="actions">
-          <a class="btn btn-primary" href={`/round/${latest.round}`}>당첨금 · 배출점 자세히</a>
+          <a class="btn btn-primary" href={u(`/round/${latest.round}`)}>당첨금 · 배출점 자세히</a>
           <a class="btn btn-soft" href="#check">내 번호 맞춰보기</a>
         </div>
       </section>
@@ -38,13 +39,13 @@ const hof = hallOfFame(52).slice(0, 5);
       <section class="card">
         <div class="card-head"><h2>최근 회차</h2><p class="sub">회차를 누르면 당첨금과 1등 배출점을 볼 수 있습니다</p></div>
         {recent.map((x) => (
-          <a class="round-row" href={`/round/${x.round}`} style="color:inherit">
+          <a class="round-row" href={u(`/round/${x.round}`)} style="color:inherit">
             <div class="no"><b>{x.round}회</b><span>{formatShortDate(x.drawDate)}</span></div>
             <Balls numbers={x.numbers} bonus={x.bonus} size="sm" label={false} />
             <span class="amt">1등 {formatWon(x.prizes[0].amount)}</span>
           </a>
         ))}
-        <a class="more" href="/all">1회부터 전체 회차 보기 ›</a>
+        <a class="more" href={u('/all')}>1회부터 전체 회차 보기 ›</a>
       </section>
 
       <div class="mobile-only">
@@ -55,10 +56,10 @@ const hof = hallOfFame(52).slice(0, 5);
       <section class="card">
         <div class="card-head"><h2>이 사이트에서 할 수 있는 것</h2></div>
         <ul style="margin:0;padding-left:18px;line-height:1.8;font-size:14px">
-          <li><a href={`/round/${latest.round}`}>회차별 당첨번호</a> — 번호, 등수별 당첨금과 당첨자 수, 1·2등 배출점 주소와 지도</li>
-          <li><a href="/all">전체 회차 표</a> — 1회부터 한 표로, 엑셀(CSV) 다운로드</li>
-          <li><a href="/shops">1등 배출점 랭킹</a> — 최근 52회차 누적, 지역별</li>
-          <li><a href="/generate">번호 생성기</a> — 완전 무작위 6개 (당첨 확률과 무관)</li>
+          <li><a href={u(`/round/${latest.round}`)}>회차별 당첨번호</a> — 번호, 등수별 당첨금과 당첨자 수, 1·2등 배출점 주소와 지도</li>
+          <li><a href={u('/all')}>전체 회차 표</a> — 1회부터 한 표로, 엑셀(CSV) 다운로드</li>
+          <li><a href={u('/shops')}>1등 배출점 랭킹</a> — 최근 52회차 누적, 지역별</li>
+          <li><a href={u('/generate')}>번호 생성기</a> — 완전 무작위 6개 (당첨 확률과 무관)</li>
         </ul>
       </section>
     </div>
@@ -75,7 +76,7 @@ const hof = hallOfFame(52).slice(0, 5);
             <div class="info"><div class="name" style="font-weight:500">{e.name}</div><div class="addr">{e.region} · {e.rounds.length}회</div></div>
           </div>
         ))}
-        <a class="more" href="/shops">랭킹 전체 보기 ›</a>
+        <a class="more" href={u('/shops')}>랭킹 전체 보기 ›</a>
       </section>
     </aside>
   </div>
